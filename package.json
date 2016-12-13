@@ -1,0 +1,22 @@
+{
+  "name": "adventofcode",
+  "version": "1.0.0",
+  "description": "http://adventofcode.com/2016/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcmajcher/adventofcode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcmajcher/adventofcode/issues"
+  },
+  "homepage": "https://github.com/marcmajcher/adventofcode#readme",
+  "dependencies": {
+    "md5": "^2.2.1"
+  }
+}
