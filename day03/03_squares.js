@@ -1,9 +1,12 @@
-const sampleData = require('./data');
+const s = require('./data');
 
+let count = 0;
 
-console.log(sampleData.reduce(isValid, 0));
-
-function isValid(last, cur) {
-  triangle = cur.sort((a, b) => { return a > b });
-  return (triangle[0] + triangle[1] > triangle[2] ? last + 1 : last);
+for (let i = 0; i < s.length; i += 3) {
+  for (let j = 0; j < 3; j++) {
+    let t = [s[i][j], s[i + 1][j], s[i + 2][j]].sort((a, b) => {return a > b});
+    count = t[0] + t[1] > t[2] ? count + 1 : count;
+  }
 }
+
+console.log(count);
