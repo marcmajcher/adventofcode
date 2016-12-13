@@ -13,26 +13,34 @@ const sampleData = [
 //   'RRDDD',
 //   'LURDL',
 //   'UUUUD'
-// ]; // => 1985
+// ]; // => 5DB3
 
-// const pad = [
-//   [1,2,3],
-//   [4,5,6],
-//   [7,8,9]
-// ];
+// const pad = [0000000
+//              0001000
+//              0023400
+//              0567890
+//              00ABC00
+//              000D000
+//              0000000';
+
+const pad = '000000000010000023400056789000ABC00000D0000000000';
 
 const moves = {
   U: function(key) {
-    return (key>3?key-3:key);
+    let pos = key - 7;
+    return (pad[pos] === '0' ? key : pos);
   },
   R: function(key) {
-    return (key%3!==0?key+1:key);
+    let pos = key + 1;
+    return (pad[pos] === '0' ? key : pos);
   },
   D: function(key) {
-    return (key<7?key+3:key);
+    let pos = key + 7;
+    return (pad[pos] === '0' ? key : pos);
   },
-  L: function (key) {
-    return (key%3!==1?key-1:key);
+  L: function(key) {
+    let pos = key - 1;
+    return (pad[pos] === '0' ? key : pos);
   }
 }
 
@@ -40,12 +48,11 @@ function getKey(data, key) {
   if (data.length > 0) {
     let str = data.shift();
     str.split('').forEach((dir) => {
-      let okey = key;
       key = moves[dir](key);
     });
-    return key + getKey(data, key);
+    return pad[key] + getKey(data, key);
   }
   return '';
 }
 
-console.log(getKey(sampleData, 5));
+console.log(getKey(sampleData, 22));
