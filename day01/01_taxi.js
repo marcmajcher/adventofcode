@@ -22,18 +22,35 @@ let location = {
 };
 let direction = 1; // start facing north
 
+let visited = {};
+
 function step(inst) {
   const dir = inst.slice(0, 1);
   const dist = parseInt(inst.slice(1));
 
-  direction = (dir === 'L'? direction - 1: direction + 1) % 4;
+  direction = (dir === 'L' ? direction - 1 : direction + 1) % 4;
   if (direction < 0) {
     direction += 4;
   }
 
-  location.x += wnes[direction].x * dist;
-  location.y += wnes[direction].y * dist;
+  for (let i = 0; i < dist; i++) {
+    if (wnes[direction].x === 0) {
+      location.y += wnes[direction].y;
+    }
+    else {
+      location.x += wnes[direction].x;
+    }
+    checkKey();
+  }
+}
+
+function checkKey() {
+  let key = JSON.stringify(location);
+  if (visited[key]) {
+    console.log(Math.abs(location.x) + Math.abs(location.y));
+    process.exit();
+  }
+  visited[key] = 1;
 }
 
 sampleData.split(', ').forEach(step);
-console.log(Math.abs(location.x) + Math.abs(location.y)); 
