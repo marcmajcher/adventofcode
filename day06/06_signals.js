@@ -33,7 +33,7 @@ function decode(counts) {
   let message = '';
   counts.forEach((obj) => {
     message += Object.keys(obj).reduce((last, curr) => {
-      return obj[last]>obj[curr]?last:curr;
+      return obj[last]<obj[curr]?last:curr;
     });
   });
   return message;
