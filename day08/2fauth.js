@@ -5,7 +5,7 @@ const cols = 50;
 // const rows = 3;
 // const cols = 7;
 const grid = [];
-const off = '.';
+const off = ' ';
 const on = '#';
 
 const data = require('./data');
@@ -74,10 +74,8 @@ const commands = {
 };
 
 data.forEach((el) => {
-  console.log(el);
   let [cmd, ...rest] = el.split(' ');
   commands[cmd](rest);
-  printGrid();
-  console.log(countGrid());
-  console.log('-----');
 });
+
+printGrid();
