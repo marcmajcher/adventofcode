@@ -1,4 +1,4 @@
-uzmnhwye
+module.exports = `uzmnhwye
 jvyyfmhr
 eiwokyzj
 rghqvfsx
@@ -595,4 +595,4 @@ hxddxhda
 mpvfoaim
 rtxkcevq
 qythgaev
-lnhqdrzc
+lnhqdrzc`;
