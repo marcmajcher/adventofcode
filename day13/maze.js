@@ -67,19 +67,15 @@ function drawGrid() {
 
 function getNeighbors(pos) {
   let narr = [];
-  for (let i = -1; i <= 1; i++) {
-    for (let j = -1; j <= 1; j++) {
-      if (i === 0 && j === 0) {
-        continue;
-      }
-      if (getPoint(pos.x + j, pos.y + i) === c_empty) {
-        narr.push({
-          x: pos.x + j,
-          y: pos.y + i
-        });
-      }
+  const ncells = [{x:-1,y:0}, {x:1,y:0}, {x:0,y:1}, {x:0,y:-1}];
+  ncells.forEach((cell) => {
+    if (getPoint(pos.x + cell.x, pos.y + cell.y) === c_empty) {
+      narr.push({
+        x: pos.x + cell.x,
+        y: pos.y + cell.y
+      });
     }
-  }
+  })
   return narr;
 }
 
@@ -97,8 +93,9 @@ function getPath(start, dest) {
   const cameFrom = {};
 
   function getKey(pos) {
-    return JSON.stringify([pos.x,pos.y]);
+    return JSON.stringify([pos.x, pos.y]);
   }
+
   function setCost(pos, val) {
     costSoFar[getKey(pos)] = val;
   }
@@ -166,13 +163,26 @@ function getPath(start, dest) {
     });
   }
 
-  return cameFrom;
+  // return cameFrom;
 
-  // if (cameFrom())
-  // const pathList = [];
-
+  if (cameFrom[getKey(dest)]) {
+    const pathList = [];
+    let nextNode = dest;
+    while (true) {
+      pathList.push(nextNode);
+      nextNode = cameFrom[getKey(nextNode)];
+      if (nextNode.x === start.x && nextNode.y === start.y) {
+        break;
+      }
+    }
+    return pathList;
+  }
+  else {
+    return undefined;
+  }
 }
 
 const path = getPath(start, dest);
 drawGrid();
 console.log('\nPATH:', path);
+console.log('Distance: ', path.length);
