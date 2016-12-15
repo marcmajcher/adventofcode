@@ -2,8 +2,8 @@
 
 const pq = require('js-priority-queue');
 
-// const data = 1352;
-const data = 10;
+const data = 1352;
+// const data = 10;
 
 const c_empty = '.';
 const c_wall = '#';
@@ -15,16 +15,20 @@ const start = {
   y: 1
 };
 const dest = {
-  x: 7,
-  y: 4
+  x: 31,
+  y: 39
 };
+// const dest = {
+//   x: 7,
+//   y: 4
+// };
 
 function getPoint(x, y) {
   if (x < 0 || y < 0) {
     return c_wall;
   }
 
-  if (x > 9 || y > 9) {
+  if (x > 49 || y > 49) {
     return c_wall;
   }
 
