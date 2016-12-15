@@ -61,6 +61,7 @@ function give(val, type, id) {
 }
 
 let done = false;
+
 function step() {
   const activeBots = bots.filter(b => b.values.length >= 2);
   if (activeBots.length > 0) {
@@ -70,7 +71,7 @@ function step() {
 
       if (low === target[0] && high === target[1]) {
         console.log(`*** WE GOT ONE ==> BOT ${b.id}`);
-        done = true;
+        // done = true;
       }
       console.log(`${b.id}: ${low} => ${b.low.join(' ')} ; ${high} => ${b.high.join(' ')}`);
       give(low, ...b.low);
@@ -86,3 +87,4 @@ while (!done && step()) {
   logBots();
 }
 console.log(outputs);
+console.log(outputs[0] * outputs[1] * outputs[2]);
