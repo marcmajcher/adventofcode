@@ -18,6 +18,9 @@ const discs = [{
 }, {
   size: 5,
   pos: 0
+}, {
+  size: 11,
+  pos: 0
 }];
 
 // const discs = [
@@ -32,7 +35,7 @@ while (!ok) {
   time++;
   ok = true;
 
-  console.log('Time', time);
+  // console.log('Time', time);
   for (let i = 0; i < discs.length; i++) {
     const sec = i + 1;
     const pos = (discs[i].pos + sec + time) % discs[i].size;
