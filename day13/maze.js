@@ -85,13 +85,7 @@ function getNeighbors(pos) {
 
 function getPath(start, dest) {
 
-  // from http://www.redblobgames.com/pathfinding/a-star/introduction.html
-  // frontier = PriorityQueue()
-  // frontier.put(start, 0)
-  // came_from = {}
-  // cost_so_far = {}
-  // came_from[start] = None
-  // cost_so_far[start] = 0
+  // adapted from http://www.redblobgames.com/pathfinding/a-star/introduction.html
 
   const costSoFar = {};
   const cameFrom = {};
@@ -131,43 +125,30 @@ function getPath(start, dest) {
   setCost(start, 0);
   setCame(start, undefined);
 
-  // while not frontier.empty():
   while (nodeList.length > 0) {
     // console.log(nodeList.length);
-    //    current = frontier.get()
     const current = nodeList.dequeue();
 
-    //  if current == goal:
     if (current.x == dest.x && current.y === dest.y) {
-      //     break
       break;
     }
 
-    //  for next in graph.neighbors(current):
     getNeighbors(current).forEach((neighbor) => {
       // console.log(`Current: ${JSON.stringify(current)} N: ${JSON.stringify(neighbor)}`);
-      //     new_cost = cost_so_far[current] + graph.cost(current, next)
       let newCost = getCost(current) + 1;
       // console.log(` $$$ currentcost: ${getCost(current)} new cost: ${newCost}`);
-      //     if next not in cost_so_far or new_cost < cost_so_far[next]:
       let neighborCost = getCost(neighbor);
       // console.log(`NC: ${neighborCost} for ${JSON.stringify(neighbor)}`);
       if (!neighborCost || newCost < getCost(neighbor)) {
-        //        cost_so_far[next] = new_cost
         // console.log(` setting cost ${newCost} for ${JSON.stringify(neighbor)}`);
         setCost(neighbor, newCost)
-          //        priority = new_cost + heuristic(goal, next)
         neighbor.weight = newCost + manhattan(neighbor, dest);
-        //        frontier.put(next, priority)
         // console.log(`  queueing ${JSON.stringify(neighbor)}`);
         nodeList.queue(neighbor);
-        //        came_from[next] = current
         setCame(neighbor, current);
       }
     });
   }
-
-  // return cameFrom;
 
   if (cameFrom[getKey(dest)]) {
     const pathList = [];
