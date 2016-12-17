@@ -48,10 +48,10 @@ function drawGrid() {
   let gridSize = grid.reduce((acc, curr) => {
     return Math.max(acc, curr.length)
   }, 0);
-  let xrow = '  ';
-  let drow = '--';
+  let xrow = '    ';
+  let drow = '----';
   for (let i = 0; i < gridSize; i++) {
-    xrow += i;
+    xrow += i % 10;
     drow += '-';
   }
   console.log(xrow);
@@ -61,7 +61,8 @@ function drawGrid() {
     if (!grid[y]) {
       grid[y] = [];
     }
-    let row = y + ' ';
+    let row = y < 100 ? (y < 10 ? '  ' : ' ') : '';
+    row += y + ' ';
     for (let i = 0; i < gridSize; i++) {
       row += grid[y][i] || c_dunno;
     }
@@ -71,7 +72,19 @@ function drawGrid() {
 
 function getNeighbors(pos) {
   let narr = [];
-  const ncells = [{x:-1,y:0}, {x:1,y:0}, {x:0,y:1}, {x:0,y:-1}];
+  const ncells = [{
+    x: -1,
+    y: 0
+  }, {
+    x: 1,
+    y: 0
+  }, {
+    x: 0,
+    y: 1
+  }, {
+    x: 0,
+    y: -1
+  }];
   ncells.forEach((cell) => {
     if (getPoint(pos.x + cell.x, pos.y + cell.y) === c_empty) {
       narr.push({
@@ -149,7 +162,7 @@ function getPath(start, dest) {
       }
     });
   }
-
+console.log(costSoFar);
   if (cameFrom[getKey(dest)]) {
     const pathList = [];
     let nextNode = dest;
@@ -160,7 +173,10 @@ function getPath(start, dest) {
         break;
       }
     }
-    return pathList;
+    return {
+      path: pathList,
+      length: pathList.length
+    };
   }
   else {
     return undefined;
@@ -169,5 +185,8 @@ function getPath(start, dest) {
 
 const path = getPath(start, dest);
 drawGrid();
-console.log('\nPATH:', path);
+console.log('\nPATH:', path.path.reverse().reduce((last, cur) => {
+  last += ` -> (${cur.x},${cur.y})`;
+  return last;
+}, ''));
 console.log('Distance: ', path.length);
