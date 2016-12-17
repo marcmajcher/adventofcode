@@ -142,9 +142,9 @@ function getPath(start, dest) {
     // console.log(nodeList.length);
     const current = nodeList.dequeue();
 
-    if (current.x == dest.x && current.y === dest.y) {
-      break;
-    }
+    // if (current.x == dest.x && current.y === dest.y) {
+    //   break;
+    // }
 
     getNeighbors(current).forEach((neighbor) => {
       // console.log(`Current: ${JSON.stringify(current)} N: ${JSON.stringify(neighbor)}`);
@@ -152,7 +152,7 @@ function getPath(start, dest) {
       // console.log(` $$$ currentcost: ${getCost(current)} new cost: ${newCost}`);
       let neighborCost = getCost(neighbor);
       // console.log(`NC: ${neighborCost} for ${JSON.stringify(neighbor)}`);
-      if (!neighborCost || newCost < getCost(neighbor)) {
+      if (typeof neighborCost === 'undefined' /*|| newCost < getCost(neighbor)*/ ) {
         // console.log(` setting cost ${newCost} for ${JSON.stringify(neighbor)}`);
         setCost(neighbor, newCost)
         neighbor.weight = newCost + manhattan(neighbor, dest);
@@ -162,7 +162,9 @@ function getPath(start, dest) {
       }
     });
   }
-console.log(costSoFar);
+
+console.log(Object.keys(costSoFar).filter(k => costSoFar[k]<=50).length );
+  /////
   if (cameFrom[getKey(dest)]) {
     const pathList = [];
     let nextNode = dest;
@@ -184,9 +186,9 @@ console.log(costSoFar);
 }
 
 const path = getPath(start, dest);
-drawGrid();
-console.log('\nPATH:', path.path.reverse().reduce((last, cur) => {
-  last += ` -> (${cur.x},${cur.y})`;
-  return last;
-}, ''));
-console.log('Distance: ', path.length);
+// drawGrid();
+// console.log('\nPATH:', path.path.reverse().reduce((last, cur) => {
+//   last += ` -> (${cur.x},${cur.y})`;
+//   return last;
+// }, ''));
+// console.log('Distance: ', path.length);
