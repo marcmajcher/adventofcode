@@ -1,7 +1,7 @@
 'use strict';
 
 const input = '10011111011011001';
-const diskSize = 272;
+const diskSize = 35651584;
 
 function getDragonData(seed, size) {
   let data = seed.toString();
@@ -39,6 +39,5 @@ function getCheckSum(str) {
 }
 
 const dragon = getDragonData(input, diskSize);
-// console.log(dragon);
 const checksum = getCheckSum(dragon);
 console.log(checksum);
