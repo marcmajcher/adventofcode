@@ -17,22 +17,30 @@ const things = {
   128: 'ruthenium microchip',
   256: 'plutonium generator',
   512: 'plutonium microchip',
-  1024: 'elerium generator',
-  2048: 'elerium microchip',
-  4096: 'dilithium generator',
-  8192: 'dilithium microchip'
+  // 1024: 'elerium generator',
+  // 2048: 'elerium microchip',
+  // 4096: 'dilithium generator',
+  // 8192: 'dilithium microchip'
 };
-const maxId = 8192;
+const maxId = 512;
+// const maxId = 8192;
 
 const startState = [
   1, // Current Floor
-  15363, // Floor 1 : 11110000000011
-  340, // Floor 2 : 00000101010100
-  680, // Floor 3 : 00001010101000
-  0 // Floor 4 : 00000000000000
+  3, // Floor 1 : 0000000011
+  340, // Floor 2 : 0101010100
+  680, // Floor 3 : 1010101000
+  0 // Floor 4 : 0000000000
+  // 1, // Current Floor
+  // 15363, // Floor 1 : 11110000000011
+  // 340, // Floor 2 : 00000101010100
+  // 680, // Floor 3 : 00001010101000
+  // 0 // Floor 4 : 00000000000000
 ];
-const generatorBits = 5461; // 1 + 4 + 16 + 64 + 256
-const microchipBits = 10922; // 2 + 8 + 32 + 128 + 512
+const generatorBits = 341; // 1 + 4 + 16 + 64 + 256
+const microchipBits = 682; // 2 + 8 + 32 + 128 + 512
+// const generatorBits = 5461; // 1 + 4 + 16 + 64 + 256
+// const microchipBits = 10922; // 2 + 8 + 32 + 128 + 512
 
 
 // The first floor contains a hydrogen-compatible microchip and a lithium-compatible microchip.
@@ -50,7 +58,6 @@ const microchipBits = 10922; // 2 + 8 + 32 + 128 + 512
 // const startState = [1, 10, 1, 4, 0];
 // const generatorBits = 5; // 1 + 4
 // const microchipBits = 10; // 2 + 8
-
 
 
 function itemsOnFloor(floorList, floor) {
@@ -149,28 +156,38 @@ let successStateKey = undefined;
 while (statesToVisit.length > 0) {
   let nextState = statesToVisit.pop();
   let nextStateKey = stateToKey(nextState);
+  // console.log('----------');
+  // console.log('NEXT STATE', nextState);
+  // console.log('   neighbors:');
 
   if (stateIsSuccess(nextState)) {
-    console.log('WOOOO', nextState, visitedStates[nextStateKey]);
+    console.log('WOOOO!', nextState, visitedStates[nextStateKey]);
     successStateKey = nextStateKey;
-  //   break;
+    break;
   }
 
   getNeighborStates(nextState).forEach((neighbor) => {
     let neighborKey = stateToKey(neighbor);
     let neighborSteps = visitedStates[nextStateKey].steps + 1;
-    if (visitedStates[neighborKey] !== 'INVALID' &&
-      typeof visitedStates[neighborKey] === 'undefined' ||
-      visitedStates[neighborKey].steps > neighborSteps) {
-      if (stateIsValid(neighbor)) {
-        visitedStates[neighborKey] = {
-          from: nextStateKey,
-          steps: neighborSteps
+
+    if (visitedStates[neighborKey] !== 'INVALID') {
+
+      if (typeof visitedStates[neighborKey] === 'undefined' ||
+        visitedStates[neighborKey].steps > neighborSteps) {
+
+        if (stateIsValid(neighbor)) {
+          // console.log('>', neighbor);
+          visitedStates[neighborKey] = {
+            from: nextStateKey,
+            steps: neighborSteps
+          }
+          statesToVisit.unshift(neighbor);
         }
-        statesToVisit.push(neighbor);
-      }
-      else {
-        visitedStates[neighborKey] = 'INVALID';
+        else {
+          // console.log('  INVALID:', neighbor);
+          visitedStates[neighborKey] = 'INVALID';
+        }
+
       }
     }
   });
