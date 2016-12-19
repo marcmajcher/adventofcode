@@ -16,19 +16,23 @@ const things = {
   64: 'ruthenium generator',
   128: 'ruthenium microchip',
   256: 'plutonium generator',
-  512: 'plutonium microchip'
+  512: 'plutonium microchip',
+  1024: 'elerium generator',
+  2048: 'elerium microchip',
+  4096: 'dilithium generator',
+  8192: 'dilithium microchip'
 };
-const maxId = 512;
+const maxId = 8192;
 
 const startState = [
   1, // Current Floor
-  3, // Floor 1 : 0000000011
-  340, // Floor 2 : 0101010100
-  680, // Floor 3 : 1010101000
-  0 // Floor 4 : 0000000000
+  15363, // Floor 1 : 11110000000011
+  340, // Floor 2 : 00000101010100
+  680, // Floor 3 : 00001010101000
+  0 // Floor 4 : 00000000000000
 ];
-const generatorBits = 341; // 1 + 4 + 16 + 64 + 256
-const microchipBits = 682; // 2 + 8 + 32 + 128 + 512
+const generatorBits = 5461; // 1 + 4 + 16 + 64 + 256
+const microchipBits = 10922; // 2 + 8 + 32 + 128 + 512
 
 
 // The first floor contains a hydrogen-compatible microchip and a lithium-compatible microchip.
@@ -147,7 +151,7 @@ while (statesToVisit.length > 0) {
   let nextStateKey = stateToKey(nextState);
 
   if (stateIsSuccess(nextState)) {
-    console.log('WOOOO', nextState);
+    console.log('WOOOO', nextState, visitedStates[nextStateKey]);
     successStateKey = nextStateKey;
   //   break;
   }
