@@ -1,11 +1,5 @@
 'use strict';
 
-// The first floor contains a promethium generator and a promethium-compatible microchip.
-// The second floor contains a cobalt generator, a curium generator, a ruthenium generator, and a plutonium generator.
-// The third floor contains a cobalt-compatible microchip, a curium-compatible microchip, a
-//     ruthenium-compatible microchip, and a plutonium-compatible microchip.
-// The fourth floor contains nothing relevant.
-
 const things = {
   1: 'promethium generator',
   2: 'promethium microchip',
@@ -17,48 +11,22 @@ const things = {
   128: 'ruthenium microchip',
   256: 'plutonium generator',
   512: 'plutonium microchip',
-  // 1024: 'elerium generator',
-  // 2048: 'elerium microchip',
-  // 4096: 'dilithium generator',
-  // 8192: 'dilithium microchip'
+  1024: 'elerium generator',
+  2048: 'elerium microchip',
+  4096: 'dilithium generator',
+  8192: 'dilithium microchip'
 };
-const maxId = 512;
-// const maxId = 8192;
+const maxId = 8192;
 
 const startState = [
   1, // Current Floor
-  3, // Floor 1 : 0000000011
-  340, // Floor 2 : 0101010100
-  680, // Floor 3 : 1010101000
-  0 // Floor 4 : 0000000000
-  // 1, // Current Floor
-  // 15363, // Floor 1 : 11110000000011
-  // 340, // Floor 2 : 00000101010100
-  // 680, // Floor 3 : 00001010101000
-  // 0 // Floor 4 : 00000000000000
+  15363, // Floor 1 : 11110000000011
+  340, // Floor 2 : 00000101010100
+  680, // Floor 3 : 00001010101000
+  0 // Floor 4 : 00000000000000
 ];
-const generatorBits = 341; // 1 + 4 + 16 + 64 + 256
-const microchipBits = 682; // 2 + 8 + 32 + 128 + 512
-// const generatorBits = 5461; // 1 + 4 + 16 + 64 + 256
-// const microchipBits = 10922; // 2 + 8 + 32 + 128 + 512
-
-
-// The first floor contains a hydrogen-compatible microchip and a lithium-compatible microchip.
-// The second floor contains a hydrogen generator.
-// The third floor contains a lithium generator.
-// The fourth floor contains nothing relevant.
-
-// const things = {
-//   1: 'hydrogen generator',
-//   2: 'hydrogen microchip',
-//   4: 'lithium generator',
-//   8: 'lithium microchip'
-// };
-// const maxId = 8;
-// const startState = [1, 10, 1, 4, 0];
-// const generatorBits = 5; // 1 + 4
-// const microchipBits = 10; // 2 + 8
-
+const generatorBits = 5461; // 1 + 4 + 16 + 64 + 256
+const microchipBits = 10922; // 2 + 8 + 32 + 128 + 512
 
 function itemsOnFloor(floorList, floor) {
   let itemIds = []
@@ -142,7 +110,6 @@ function describeState(floorData) {
   }
 }
 
-
 let visitedStates = {
   [stateToKey(startState)]: {
     steps: 0,
@@ -156,9 +123,6 @@ let successStateKey = undefined;
 while (statesToVisit.length > 0) {
   let nextState = statesToVisit.pop();
   let nextStateKey = stateToKey(nextState);
-  // console.log('----------');
-  // console.log('NEXT STATE', nextState);
-  // console.log('   neighbors:');
 
   if (stateIsSuccess(nextState)) {
     console.log('WOOOO!', nextState, visitedStates[nextStateKey]);
@@ -170,44 +134,35 @@ while (statesToVisit.length > 0) {
     let neighborKey = stateToKey(neighbor);
     let neighborSteps = visitedStates[nextStateKey].steps + 1;
 
-    if (visitedStates[neighborKey] !== 'INVALID') {
-
+    if (stateIsValid(neighbor)) {
       if (typeof visitedStates[neighborKey] === 'undefined' ||
         visitedStates[neighborKey].steps > neighborSteps) {
 
-        if (stateIsValid(neighbor)) {
-          // console.log('>', neighbor);
-          visitedStates[neighborKey] = {
-            from: nextStateKey,
-            steps: neighborSteps
-          }
-          statesToVisit.unshift(neighbor);
-        }
-        else {
-          // console.log('  INVALID:', neighbor);
-          visitedStates[neighborKey] = 'INVALID';
+        let newVal = {
+          from: nextStateKey,
+          steps: neighborSteps
+        };
+
+        let numShifts = (Math.log2(maxId) + 1) / 2;
+        const rightShift = Math.log2(maxId) - 1;
+        const mask = maxId * 2 - 1;
+
+        function doShift(num) {
+          return (num << 2 | num >>> rightShift) & mask;
         }
 
+        while (numShifts > 0) {
+          for (var i = 1; i <= 4; i++) {
+            neighbor[i] = doShift(neighbor[i]);
+          }
+          visitedStates[stateToKey(neighbor)] = newVal;
+          numShifts--;
+        }
+
+        statesToVisit.unshift(neighbor);
       }
     }
   });
 }
 
-// console.log(visitedStates);
-// let key = successStateKey;
-//
-// while (visitedStates[key].from) {
-//     // console.log(key);
-//     describeState(keyToState(key));
-//     console.log();
-//     key = visitedStates[key].from;
-// }
-
 console.log(visitedStates[successStateKey].steps);
-// describeState(startState);
-// console.log();
-// getNeighborStates(startState).forEach((s) => {
-//   describeState(s);
-//   console.log('Valid:',stateIsValid(s));
-//   console.log();
-// });
