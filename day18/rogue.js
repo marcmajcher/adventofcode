@@ -13,19 +13,23 @@ const rules = {
   '^^.': '^',
   '^^^': '.'
 };
-const rows = 40;
+const rows = 400000;
 
-const room = [input];
+let currentRow = input;
+let safeCount = countRow(input);
 
-for (let r=0; r<rows-1; r++) {
-  const row = `.${room[r]}.`;
+for (let r = 0; r < rows - 1; r++) {
+  const row = '.'+currentRow+'.';
   let newRow = '';
-  for (let i=0; i<row.length-2; i++) {
-    newRow += rules[row.slice(i,i+3)];
-    // console.log(row.slice(i,3));
+  for (let i = 0; i < row.length - 2; i++) {
+    newRow += rules[row.slice(i, i + 3)];
   }
-  room.push(newRow);
+  safeCount += countRow(newRow);
+  currentRow = newRow;
 }
 
-const match = room.join('').match(/\./g) || [];
-console.log(match.length);
+function countRow(row) {
+  return (row.match(/\./g) || []).length;
+}
+
+console.log('count', safeCount);
