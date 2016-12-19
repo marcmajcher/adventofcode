@@ -1,7 +1,7 @@
 'use strict';
 
-// const input = 'pvhmgsws';
-const input = 'hijkl'; // ==> SKREWD
+const input = 'pvhmgsws';
+// const input = 'hijkl'; // ==> SKREWD
 // const input = 'ihgpwlah'; // => DDRRRD
 // const input = 'kglvqrro'; // => DDUDRLRRUDRD
 // const input = 'ulqzkmiv'; // => DRURDRUDDLLDLUURRDULRLDUUDDDRR
@@ -32,21 +32,41 @@ function openings(path) {
 
 function move(pos, dir) {
   let newPos = [pos[0] + dirs[dir][0], pos[1] + dirs[dir][1]];
-  if (newPos[0] > 0 && newPos[0] < gridSize &&
-    newPos[1] > 0 && newPos[1] < gridSize) {
+  if (newPos[0] >= 0 && newPos[0] < gridSize &&
+    newPos[1] >= 0 && newPos[1] < gridSize) {
     return newPos;
   }
   return false;
 }
 
-const movesToTry = [ {pos: start, path: '', moves: 0}];
+const movesToTry = [{
+  pos: start,
+  path: '',
+  moves: 0
+}];
 
 while (movesToTry.length > 0) {
   const thisMove = movesToTry.pop();
-
   if (thisMove.pos[0] === target[0] && thisMove.pos[1] === target[1]) {
     console.log('MADE IT!', thisMove);
     process.exit();
   }
-  
+
+  let open = openings(thisMove.path);
+  for (let i = 0; i < open.length; i++) {
+    let dir = open[i];
+    let newPos = move(thisMove.pos, dir);
+    if (newPos) {
+      movesToTry.unshift({
+        pos: newPos,
+        path: thisMove.path + dir,
+        moves: thisMove.moves + 1
+      });
+    }
+  }
+
+  // get directions
+  // for each dir, unshift onto moves // bail if no moves
+
+
 }
