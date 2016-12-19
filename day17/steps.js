@@ -1,10 +1,10 @@
 'use strict';
 
 const input = 'pvhmgsws';
-// const input = 'hijkl'; // ==> SKREWD
-// const input = 'ihgpwlah'; // => DDRRRD
-// const input = 'kglvqrro'; // => DDUDRLRRUDRD
-// const input = 'ulqzkmiv'; // => DRURDRUDDLLDLUURRDULRLDUUDDDRR
+
+// const input = 'ihgpwlah'; // => longest: 370
+// const input = 'kglvqrro'; // => longest: 492
+// const input = 'ulqzkmiv'; // => longest: 830
 
 const md5 = require('md5');
 const gridSize = 4;
@@ -45,28 +45,29 @@ const movesToTry = [{
   moves: 0
 }];
 
+let longestMove = {moves:0};
+
 while (movesToTry.length > 0) {
   const thisMove = movesToTry.pop();
   if (thisMove.pos[0] === target[0] && thisMove.pos[1] === target[1]) {
-    console.log('MADE IT!', thisMove);
-    process.exit();
-  }
-
-  let open = openings(thisMove.path);
-  for (let i = 0; i < open.length; i++) {
-    let dir = open[i];
-    let newPos = move(thisMove.pos, dir);
-    if (newPos) {
-      movesToTry.unshift({
-        pos: newPos,
-        path: thisMove.path + dir,
-        moves: thisMove.moves + 1
-      });
+    if (thisMove.moves > longestMove.moves) {
+      longestMove = thisMove;
     }
   }
-
-  // get directions
-  // for each dir, unshift onto moves // bail if no moves
-
-
+  else {
+    let open = openings(thisMove.path);
+    for (let i = 0; i < open.length; i++) {
+      let dir = open[i];
+      let newPos = move(thisMove.pos, dir);
+      if (newPos) {
+        movesToTry.unshift({
+          pos: newPos,
+          path: thisMove.path + dir,
+          moves: thisMove.moves + 1
+        });
+      }
+    }
+  }
 }
+
+console.log('LONGEST:', longestMove.moves);
