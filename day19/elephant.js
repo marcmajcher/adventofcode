@@ -2,30 +2,37 @@
 
 const input = 3001330;
 
-let elves = Array(input).fill(1);
-
-const d1 = new Date();
-let taker = -1;
-
-while (elves.indexOf(1, elves.indexOf(1) + 1) !== -1) {
-  for (let i = 0; i < elves.length; i++) {
-    if (elves[i] === 1) {
-      if (taker < 0) { // you're the new taker!
-        taker = i;
-      }
-      else {
-        // console.log(`Elf ${taker} taking from elf ${i}`);
-        elves[taker] = 1;
-        elves[i] = 0;
-        taker = -1;
-      }
-    }
-  }
-  // console.log(elves);
+let curr = 1;
+let left = [];
+for (let i = 2; i <= input / 2 + 1; i++) {
+  left.push(i);
+}
+let right = [];
+for (let i = input; i > input / 2 + 1; i--) {
+  right.push(i);
 }
 
-const d2 = new Date();
-// console.log(elves);
-console.log(elves.indexOf(1) + 1);
+function step() {
+  left.pop();
+  right.unshift(curr);
 
-console.log('time: ', d2 - d1);
+  if (left.length > 0) {
+    curr = left.shift();
+  }
+  else {
+    curr = right.pop();
+  }
+  while (left.length < right.length) {
+    left.push(right.pop());
+  }
+
+  if ((left.length + right.length)%1000 === 0) {
+    console.log(left.length+right.length);
+  }
+}
+
+while (left.length > 0 || right.length > 0) {
+  step();
+}
+
+console.log(curr);
