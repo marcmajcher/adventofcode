@@ -1,0 +1,1926 @@
+ RES: a <= lx  FROM: undefined
+   PARTS key a lx
+OPERATING ON lx
+RESOLVINGb lx
+   RES: lx <= lw OR lv  FROM: lx
+     PARTS key lx lw OR lv
+OPERATING ON lw OR lv
+RESOLVINGb lw
+     RES: lw <= lc LSHIFT 1  FROM: lw OR lv
+       PARTS key lw lc LSHIFT 1
+OPERATING ON lc LSHIFT 1
+RESOLVINGb lc
+       RES: lc <= lb OR la  FROM: lc LSHIFT 1
+         PARTS key lc lb OR la
+OPERATING ON lb OR la
+RESOLVINGb lb
+         RES: lb <= kh LSHIFT 1  FROM: lb OR la
+           PARTS key lb kh LSHIFT 1
+OPERATING ON kh LSHIFT 1
+RESOLVINGb kh
+           RES: kh <= kg OR kf  FROM: kh LSHIFT 1
+             PARTS key kh kg OR kf
+OPERATING ON kg OR kf
+RESOLVINGb kg
+             RES: kg <= jm LSHIFT 1  FROM: kg OR kf
+               PARTS key kg jm LSHIFT 1
+OPERATING ON jm LSHIFT 1
+RESOLVINGb jm
+               RES: jm <= jl OR jk  FROM: jm LSHIFT 1
+                 PARTS key jm jl OR jk
+OPERATING ON jl OR jk
+RESOLVINGb jl
+                 RES: jl <= ir LSHIFT 1  FROM: jl OR jk
+                   PARTS key jl ir LSHIFT 1
+OPERATING ON ir LSHIFT 1
+RESOLVINGb ir
+                   RES: ir <= iq OR ip  FROM: ir LSHIFT 1
+                     PARTS key ir iq OR ip
+OPERATING ON iq OR ip
+RESOLVINGb iq
+                     RES: iq <= hw LSHIFT 1  FROM: iq OR ip
+                       PARTS key iq hw LSHIFT 1
+OPERATING ON hw LSHIFT 1
+RESOLVINGb hw
+                       RES: hw <= hv OR hu  FROM: hw LSHIFT 1
+                         PARTS key hw hv OR hu
+OPERATING ON hv OR hu
+RESOLVINGb hv
+                         RES: hv <= hb LSHIFT 1  FROM: hv OR hu
+                           PARTS key hv hb LSHIFT 1
+OPERATING ON hb LSHIFT 1
+RESOLVINGb hb
+                           RES: hb <= ha OR gz  FROM: hb LSHIFT 1
+                             PARTS key hb ha OR gz
+OPERATING ON ha OR gz
+RESOLVINGb ha
+                             RES: ha <= gg LSHIFT 1  FROM: ha OR gz
+                               PARTS key ha gg LSHIFT 1
+OPERATING ON gg LSHIFT 1
+RESOLVINGb gg
+                               RES: gg <= gf OR ge  FROM: gg LSHIFT 1
+                                 PARTS key gg gf OR ge
+OPERATING ON gf OR ge
+RESOLVINGb gf
+                                 RES: gf <= fl LSHIFT 1  FROM: gf OR ge
+                                   PARTS key gf fl LSHIFT 1
+OPERATING ON fl LSHIFT 1
+RESOLVINGb fl
+                                   RES: fl <= fk OR fj  FROM: fl LSHIFT 1
+                                     PARTS key fl fk OR fj
+OPERATING ON fk OR fj
+RESOLVINGb fk
+                                     RES: fk <= eq LSHIFT 1  FROM: fk OR fj
+                                       PARTS key fk eq LSHIFT 1
+OPERATING ON eq LSHIFT 1
+RESOLVINGb eq
+                                       RES: eq <= ep OR eo  FROM: eq LSHIFT 1
+                                         PARTS key eq ep OR eo
+OPERATING ON ep OR eo
+RESOLVINGb ep
+                                         RES: ep <= dv LSHIFT 1  FROM: ep OR eo
+                                           PARTS key ep dv LSHIFT 1
+OPERATING ON dv LSHIFT 1
+RESOLVINGb dv
+                                           RES: dv <= du OR dt  FROM: dv LSHIFT 1
+                                             PARTS key dv du OR dt
+OPERATING ON du OR dt
+RESOLVINGb du
+                                             RES: du <= da LSHIFT 1  FROM: du OR dt
+                                               PARTS key du da LSHIFT 1
+OPERATING ON da LSHIFT 1
+RESOLVINGb da
+                                               RES: da <= cz OR cy  FROM: da LSHIFT 1
+                                                 PARTS key da cz OR cy
+OPERATING ON cz OR cy
+RESOLVINGb cz
+                                                 RES: cz <= cf LSHIFT 1  FROM: cz OR cy
+                                                   PARTS key cz cf LSHIFT 1
+OPERATING ON cf LSHIFT 1
+RESOLVINGb cf
+                                                   RES: cf <= ce OR cd  FROM: cf LSHIFT 1
+                                                     PARTS key cf ce OR cd
+OPERATING ON ce OR cd
+RESOLVINGb ce
+                                                     RES: ce <= bk LSHIFT 1  FROM: ce OR cd
+                                                       PARTS key ce bk LSHIFT 1
+OPERATING ON bk LSHIFT 1
+RESOLVINGb bk
+                                                       RES: bk <= bj OR bi  FROM: bk LSHIFT 1
+                                                         PARTS key bk bj OR bi
+OPERATING ON bj OR bi
+RESOLVINGb bj
+                                                         RES: bj <= ap LSHIFT 1  FROM: bj OR bi
+                                                           PARTS key bj ap LSHIFT 1
+OPERATING ON ap LSHIFT 1
+RESOLVINGb ap
+                                                           RES: ap <= ao OR an  FROM: ap LSHIFT 1
+                                                             PARTS key ap ao OR an
+OPERATING ON ao OR an
+RESOLVINGb ao
+                                                             RES: ao <= u LSHIFT 1  FROM: ao OR an
+                                                               PARTS key ao u LSHIFT 1
+OPERATING ON u LSHIFT 1
+RESOLVINGb u
+                                                               RES: u <= t OR s  FROM: u LSHIFT 1
+                                                                 PARTS key u t OR s
+OPERATING ON t OR s
+RESOLVINGb t
+                                                                 RES: t <= c LSHIFT 1  FROM: t OR s
+                                                                   PARTS key t c LSHIFT 1
+OPERATING ON c LSHIFT 1
+RESOLVINGb c
+                                                                   RES: c <= 0  FROM: c LSHIFT 1
+RESOLVINGc 1 ::: c LSHIFT 1
+RESOLVINGc s ::: t OR s
+                                                                 RES: s <= 1 AND r  FROM: t OR s
+                                                                   PARTS key s 1 AND r
+OPERATING ON 1 AND r
+RESOLVINGb 1
+RESOLVINGc r ::: 1 AND r
+                                                                   RES: r <= o AND q  FROM: 1 AND r
+                                                                     PARTS key r o AND q
+OPERATING ON o AND q
+RESOLVINGb o
+                                                                     RES: o <= b OR n  FROM: o AND q
+                                                                       PARTS key o b OR n
+OPERATING ON b OR n
+RESOLVINGb b
+                                                                       RES: b <= 14146  FROM: b OR n
+RESOLVINGc n ::: b OR n
+                                                                       RES: n <= k AND m  FROM: b OR n
+                                                                         PARTS key n k AND m
+OPERATING ON k AND m
+RESOLVINGb k
+                                                                         RES: k <= d OR j  FROM: k AND m
+                                                                           PARTS key k d OR j
+OPERATING ON d OR j
+RESOLVINGb d
+                                                                           RES: d <= b RSHIFT 2  FROM: d OR j
+                                                                             PARTS key d b RSHIFT 2
+OPERATING ON b RSHIFT 2
+RESOLVINGb b
+                                                                             RES: b <= 14146  FROM: b RSHIFT 2
+OUT b 14146
+RESOLVINGc 2 ::: b RSHIFT 2
+RESOLVINGc j ::: d OR j
+                                                                           RES: j <= g AND i  FROM: d OR j
+                                                                             PARTS key j g AND i
+OPERATING ON g AND i
+RESOLVINGb g
+                                                                             RES: g <= e OR f  FROM: g AND i
+                                                                               PARTS key g e OR f
+OPERATING ON e OR f
+RESOLVINGb e
+                                                                               RES: e <= b RSHIFT 3  FROM: e OR f
+                                                                                 PARTS key e b RSHIFT 3
+OPERATING ON b RSHIFT 3
+RESOLVINGb b
+                                                                                 RES: b <= 14146  FROM: b RSHIFT 3
+OUT b 14146
+RESOLVINGc 3 ::: b RSHIFT 3
+RESOLVINGc f ::: e OR f
+                                                                               RES: f <= b RSHIFT 5  FROM: e OR f
+                                                                                 PARTS key f b RSHIFT 5
+OPERATING ON b RSHIFT 5
+RESOLVINGb b
+                                                                                 RES: b <= 14146  FROM: b RSHIFT 5
+OUT b 14146
+RESOLVINGc 5 ::: b RSHIFT 5
+RESOLVINGc i ::: g AND i
+                                                                             RES: i <= NOT h  FROM: g AND i
+                                                                               PARTS key i NOT h
+RESOLVINGa h
+                                                                               RES: h <= e AND f  FROM: NOT h
+                                                                                 PARTS key h e AND f
+OPERATING ON e AND f
+RESOLVINGb e
+                                                                                 RES: e <= b RSHIFT 3  FROM: e AND f
+OUT e 1768
+RESOLVINGc f ::: e AND f
+                                                                                 RES: f <= b RSHIFT 5  FROM: e AND f
+OUT f 442
+RESOLVINGc m ::: k AND m
+                                                                         RES: m <= NOT l  FROM: k AND m
+                                                                           PARTS key m NOT l
+RESOLVINGa l
+                                                                           RES: l <= d AND j  FROM: NOT l
+                                                                             PARTS key l d AND j
+OPERATING ON d AND j
+RESOLVINGb d
+                                                                             RES: d <= b RSHIFT 2  FROM: d AND j
+OUT d 3536
+RESOLVINGc j ::: d AND j
+                                                                             RES: j <= g AND i  FROM: d AND j
+OUT j 1874
+RESOLVINGc q ::: o AND q
+                                                                     RES: q <= NOT p  FROM: o AND q
+                                                                       PARTS key q NOT p
+RESOLVINGa p
+                                                                       RES: p <= b AND n  FROM: NOT p
+                                                                         PARTS key p b AND n
+OPERATING ON b AND n
+RESOLVINGb b
+                                                                         RES: b <= 14146  FROM: b AND n
+OUT b 14146
+RESOLVINGc n ::: b AND n
+                                                                         RES: n <= k AND m  FROM: b AND n
+OUT n 2690
+RESOLVINGc 1 ::: u LSHIFT 1
+RESOLVINGc an ::: ao OR an
+                                                             RES: an <= 1 AND am  FROM: ao OR an
+                                                               PARTS key an 1 AND am
+OPERATING ON 1 AND am
+RESOLVINGb 1
+RESOLVINGc am ::: 1 AND am
+                                                               RES: am <= aj AND al  FROM: 1 AND am
+                                                                 PARTS key am aj AND al
+OPERATING ON aj AND al
+RESOLVINGb aj
+                                                                 RES: aj <= x OR ai  FROM: aj AND al
+                                                                   PARTS key aj x OR ai
+OPERATING ON x OR ai
+RESOLVINGb x
+                                                                   RES: x <= v OR w  FROM: x OR ai
+                                                                     PARTS key x v OR w
+OPERATING ON v OR w
+RESOLVINGb v
+                                                                     RES: v <= b RSHIFT 1  FROM: v OR w
+                                                                       PARTS key v b RSHIFT 1
+OPERATING ON b RSHIFT 1
+RESOLVINGb b
+                                                                       RES: b <= 14146  FROM: b RSHIFT 1
+OUT b 14146
+RESOLVINGc 1 ::: b RSHIFT 1
+RESOLVINGc w ::: v OR w
+                                                                     RES: w <= s LSHIFT 15  FROM: v OR w
+                                                                       PARTS key w s LSHIFT 15
+OPERATING ON s LSHIFT 15
+RESOLVINGb s
+                                                                       RES: s <= 1 AND r  FROM: s LSHIFT 15
+OUT s 0
+RESOLVINGc 15 ::: s LSHIFT 15
+RESOLVINGc ai ::: x OR ai
+                                                                   RES: ai <= af AND ah  FROM: x OR ai
+                                                                     PARTS key ai af AND ah
+OPERATING ON af AND ah
+RESOLVINGb af
+                                                                     RES: af <= y OR ae  FROM: af AND ah
+                                                                       PARTS key af y OR ae
+OPERATING ON y OR ae
+RESOLVINGb y
+                                                                       RES: y <= x RSHIFT 2  FROM: y OR ae
+                                                                         PARTS key y x RSHIFT 2
+OPERATING ON x RSHIFT 2
+RESOLVINGb x
+                                                                         RES: x <= v OR w  FROM: x RSHIFT 2
+OUT x 7073
+RESOLVINGc 2 ::: x RSHIFT 2
+RESOLVINGc ae ::: y OR ae
+                                                                       RES: ae <= ab AND ad  FROM: y OR ae
+                                                                         PARTS key ae ab AND ad
+OPERATING ON ab AND ad
+RESOLVINGb ab
+                                                                         RES: ab <= z OR aa  FROM: ab AND ad
+                                                                           PARTS key ab z OR aa
+OPERATING ON z OR aa
+RESOLVINGb z
+                                                                           RES: z <= x RSHIFT 3  FROM: z OR aa
+                                                                             PARTS key z x RSHIFT 3
+OPERATING ON x RSHIFT 3
+RESOLVINGb x
+                                                                             RES: x <= v OR w  FROM: x RSHIFT 3
+OUT x 7073
+RESOLVINGc 3 ::: x RSHIFT 3
+RESOLVINGc aa ::: z OR aa
+                                                                           RES: aa <= x RSHIFT 5  FROM: z OR aa
+                                                                             PARTS key aa x RSHIFT 5
+OPERATING ON x RSHIFT 5
+RESOLVINGb x
+                                                                             RES: x <= v OR w  FROM: x RSHIFT 5
+OUT x 7073
+RESOLVINGc 5 ::: x RSHIFT 5
+RESOLVINGc ad ::: ab AND ad
+                                                                         RES: ad <= NOT ac  FROM: ab AND ad
+                                                                           PARTS key ad NOT ac
+RESOLVINGa ac
+                                                                           RES: ac <= z AND aa  FROM: NOT ac
+                                                                             PARTS key ac z AND aa
+OPERATING ON z AND aa
+RESOLVINGb z
+                                                                             RES: z <= x RSHIFT 3  FROM: z AND aa
+OUT z 884
+RESOLVINGc aa ::: z AND aa
+                                                                             RES: aa <= x RSHIFT 5  FROM: z AND aa
+OUT aa 221
+RESOLVINGc ah ::: af AND ah
+                                                                     RES: ah <= NOT ag  FROM: af AND ah
+                                                                       PARTS key ah NOT ag
+RESOLVINGa ag
+                                                                       RES: ag <= y AND ae  FROM: NOT ag
+                                                                         PARTS key ag y AND ae
+OPERATING ON y AND ae
+RESOLVINGb y
+                                                                         RES: y <= x RSHIFT 2  FROM: y AND ae
+OUT y 1768
+RESOLVINGc ae ::: y AND ae
+                                                                         RES: ae <= ab AND ad  FROM: y AND ae
+OUT ae 937
+RESOLVINGc al ::: aj AND al
+                                                                 RES: al <= NOT ak  FROM: aj AND al
+                                                                   PARTS key al NOT ak
+RESOLVINGa ak
+                                                                   RES: ak <= x AND ai  FROM: NOT ak
+                                                                     PARTS key ak x AND ai
+OPERATING ON x AND ai
+RESOLVINGb x
+                                                                     RES: x <= v OR w  FROM: x AND ai
+OUT x 7073
+RESOLVINGc ai ::: x AND ai
+                                                                     RES: ai <= af AND ah  FROM: x AND ai
+OUT ai 1345
+RESOLVINGc 1 ::: ap LSHIFT 1
+RESOLVINGc bi ::: bj OR bi
+                                                         RES: bi <= 1 AND bh  FROM: bj OR bi
+                                                           PARTS key bi 1 AND bh
+OPERATING ON 1 AND bh
+RESOLVINGb 1
+RESOLVINGc bh ::: 1 AND bh
+                                                           RES: bh <= be AND bg  FROM: 1 AND bh
+                                                             PARTS key bh be AND bg
+OPERATING ON be AND bg
+RESOLVINGb be
+                                                             RES: be <= as OR bd  FROM: be AND bg
+                                                               PARTS key be as OR bd
+OPERATING ON as OR bd
+RESOLVINGb as
+                                                               RES: as <= aq OR ar  FROM: as OR bd
+                                                                 PARTS key as aq OR ar
+OPERATING ON aq OR ar
+RESOLVINGb aq
+                                                                 RES: aq <= x RSHIFT 1  FROM: aq OR ar
+                                                                   PARTS key aq x RSHIFT 1
+OPERATING ON x RSHIFT 1
+RESOLVINGb x
+                                                                   RES: x <= v OR w  FROM: x RSHIFT 1
+OUT x 7073
+RESOLVINGc 1 ::: x RSHIFT 1
+RESOLVINGc ar ::: aq OR ar
+                                                                 RES: ar <= an LSHIFT 15  FROM: aq OR ar
+                                                                   PARTS key ar an LSHIFT 15
+OPERATING ON an LSHIFT 15
+RESOLVINGb an
+                                                                   RES: an <= 1 AND am  FROM: an LSHIFT 15
+OUT an 0
+RESOLVINGc 15 ::: an LSHIFT 15
+RESOLVINGc bd ::: as OR bd
+                                                               RES: bd <= ba AND bc  FROM: as OR bd
+                                                                 PARTS key bd ba AND bc
+OPERATING ON ba AND bc
+RESOLVINGb ba
+                                                                 RES: ba <= at OR az  FROM: ba AND bc
+                                                                   PARTS key ba at OR az
+OPERATING ON at OR az
+RESOLVINGb at
+                                                                   RES: at <= as RSHIFT 2  FROM: at OR az
+                                                                     PARTS key at as RSHIFT 2
+OPERATING ON as RSHIFT 2
+RESOLVINGb as
+                                                                     RES: as <= aq OR ar  FROM: as RSHIFT 2
+OUT as 3536
+RESOLVINGc 2 ::: as RSHIFT 2
+RESOLVINGc az ::: at OR az
+                                                                   RES: az <= aw AND ay  FROM: at OR az
+                                                                     PARTS key az aw AND ay
+OPERATING ON aw AND ay
+RESOLVINGb aw
+                                                                     RES: aw <= au OR av  FROM: aw AND ay
+                                                                       PARTS key aw au OR av
+OPERATING ON au OR av
+RESOLVINGb au
+                                                                       RES: au <= as RSHIFT 3  FROM: au OR av
+                                                                         PARTS key au as RSHIFT 3
+OPERATING ON as RSHIFT 3
+RESOLVINGb as
+                                                                         RES: as <= aq OR ar  FROM: as RSHIFT 3
+OUT as 3536
+RESOLVINGc 3 ::: as RSHIFT 3
+RESOLVINGc av ::: au OR av
+                                                                       RES: av <= as RSHIFT 5  FROM: au OR av
+                                                                         PARTS key av as RSHIFT 5
+OPERATING ON as RSHIFT 5
+RESOLVINGb as
+                                                                         RES: as <= aq OR ar  FROM: as RSHIFT 5
+OUT as 3536
+RESOLVINGc 5 ::: as RSHIFT 5
+RESOLVINGc ay ::: aw AND ay
+                                                                     RES: ay <= NOT ax  FROM: aw AND ay
+                                                                       PARTS key ay NOT ax
+RESOLVINGa ax
+                                                                       RES: ax <= au AND av  FROM: NOT ax
+                                                                         PARTS key ax au AND av
+OPERATING ON au AND av
+RESOLVINGb au
+                                                                         RES: au <= as RSHIFT 3  FROM: au AND av
+OUT au 442
+RESOLVINGc av ::: au AND av
+                                                                         RES: av <= as RSHIFT 5  FROM: au AND av
+OUT av 110
+RESOLVINGc bc ::: ba AND bc
+                                                                 RES: bc <= NOT bb  FROM: ba AND bc
+                                                                   PARTS key bc NOT bb
+RESOLVINGa bb
+                                                                   RES: bb <= at AND az  FROM: NOT bb
+                                                                     PARTS key bb at AND az
+OPERATING ON at AND az
+RESOLVINGb at
+                                                                     RES: at <= as RSHIFT 2  FROM: at AND az
+OUT at 884
+RESOLVINGc az ::: at AND az
+                                                                     RES: az <= aw AND ay  FROM: at AND az
+OUT az 468
+RESOLVINGc bg ::: be AND bg
+                                                             RES: bg <= NOT bf  FROM: be AND bg
+                                                               PARTS key bg NOT bf
+RESOLVINGa bf
+                                                               RES: bf <= as AND bd  FROM: NOT bf
+                                                                 PARTS key bf as AND bd
+OPERATING ON as AND bd
+RESOLVINGb as
+                                                                 RES: as <= aq OR ar  FROM: as AND bd
+OUT as 3536
+RESOLVINGc bd ::: as AND bd
+                                                                 RES: bd <= ba AND bc  FROM: as AND bd
+OUT bd 672
+RESOLVINGc 1 ::: bk LSHIFT 1
+RESOLVINGc cd ::: ce OR cd
+                                                     RES: cd <= 1 AND cc  FROM: ce OR cd
+                                                       PARTS key cd 1 AND cc
+OPERATING ON 1 AND cc
+RESOLVINGb 1
+RESOLVINGc cc ::: 1 AND cc
+                                                       RES: cc <= bz AND cb  FROM: 1 AND cc
+                                                         PARTS key cc bz AND cb
+OPERATING ON bz AND cb
+RESOLVINGb bz
+                                                         RES: bz <= bn OR by  FROM: bz AND cb
+                                                           PARTS key bz bn OR by
+OPERATING ON bn OR by
+RESOLVINGb bn
+                                                           RES: bn <= bl OR bm  FROM: bn OR by
+                                                             PARTS key bn bl OR bm
+OPERATING ON bl OR bm
+RESOLVINGb bl
+                                                             RES: bl <= as RSHIFT 1  FROM: bl OR bm
+                                                               PARTS key bl as RSHIFT 1
+OPERATING ON as RSHIFT 1
+RESOLVINGb as
+                                                               RES: as <= aq OR ar  FROM: as RSHIFT 1
+OUT as 3536
+RESOLVINGc 1 ::: as RSHIFT 1
+RESOLVINGc bm ::: bl OR bm
+                                                             RES: bm <= bi LSHIFT 15  FROM: bl OR bm
+                                                               PARTS key bm bi LSHIFT 15
+OPERATING ON bi LSHIFT 15
+RESOLVINGb bi
+                                                               RES: bi <= 1 AND bh  FROM: bi LSHIFT 15
+OUT bi 0
+RESOLVINGc 15 ::: bi LSHIFT 15
+RESOLVINGc by ::: bn OR by
+                                                           RES: by <= bv AND bx  FROM: bn OR by
+                                                             PARTS key by bv AND bx
+OPERATING ON bv AND bx
+RESOLVINGb bv
+                                                             RES: bv <= bo OR bu  FROM: bv AND bx
+                                                               PARTS key bv bo OR bu
+OPERATING ON bo OR bu
+RESOLVINGb bo
+                                                               RES: bo <= bn RSHIFT 2  FROM: bo OR bu
+                                                                 PARTS key bo bn RSHIFT 2
+OPERATING ON bn RSHIFT 2
+RESOLVINGb bn
+                                                                 RES: bn <= bl OR bm  FROM: bn RSHIFT 2
+OUT bn 1768
+RESOLVINGc 2 ::: bn RSHIFT 2
+RESOLVINGc bu ::: bo OR bu
+                                                               RES: bu <= br AND bt  FROM: bo OR bu
+                                                                 PARTS key bu br AND bt
+OPERATING ON br AND bt
+RESOLVINGb br
+                                                                 RES: br <= bp OR bq  FROM: br AND bt
+                                                                   PARTS key br bp OR bq
+OPERATING ON bp OR bq
+RESOLVINGb bp
+                                                                   RES: bp <= bn RSHIFT 3  FROM: bp OR bq
+                                                                     PARTS key bp bn RSHIFT 3
+OPERATING ON bn RSHIFT 3
+RESOLVINGb bn
+                                                                     RES: bn <= bl OR bm  FROM: bn RSHIFT 3
+OUT bn 1768
+RESOLVINGc 3 ::: bn RSHIFT 3
+RESOLVINGc bq ::: bp OR bq
+                                                                   RES: bq <= bn RSHIFT 5  FROM: bp OR bq
+                                                                     PARTS key bq bn RSHIFT 5
+OPERATING ON bn RSHIFT 5
+RESOLVINGb bn
+                                                                     RES: bn <= bl OR bm  FROM: bn RSHIFT 5
+OUT bn 1768
+RESOLVINGc 5 ::: bn RSHIFT 5
+RESOLVINGc bt ::: br AND bt
+                                                                 RES: bt <= NOT bs  FROM: br AND bt
+                                                                   PARTS key bt NOT bs
+RESOLVINGa bs
+                                                                   RES: bs <= bp AND bq  FROM: NOT bs
+                                                                     PARTS key bs bp AND bq
+OPERATING ON bp AND bq
+RESOLVINGb bp
+                                                                     RES: bp <= bn RSHIFT 3  FROM: bp AND bq
+OUT bp 221
+RESOLVINGc bq ::: bp AND bq
+                                                                     RES: bq <= bn RSHIFT 5  FROM: bp AND bq
+OUT bq 55
+RESOLVINGc bx ::: bv AND bx
+                                                             RES: bx <= NOT bw  FROM: bv AND bx
+                                                               PARTS key bx NOT bw
+RESOLVINGa bw
+                                                               RES: bw <= bo AND bu  FROM: NOT bw
+                                                                 PARTS key bw bo AND bu
+OPERATING ON bo AND bu
+RESOLVINGb bo
+                                                                 RES: bo <= bn RSHIFT 2  FROM: bo AND bu
+OUT bo 442
+RESOLVINGc bu ::: bo AND bu
+                                                                 RES: bu <= br AND bt  FROM: bo AND bu
+OUT bu 234
+RESOLVINGc cb ::: bz AND cb
+                                                         RES: cb <= NOT ca  FROM: bz AND cb
+                                                           PARTS key cb NOT ca
+RESOLVINGa ca
+                                                           RES: ca <= bn AND by  FROM: NOT ca
+                                                             PARTS key ca bn AND by
+OPERATING ON bn AND by
+RESOLVINGb bn
+                                                             RES: bn <= bl OR bm  FROM: bn AND by
+OUT bn 1768
+RESOLVINGc by ::: bn AND by
+                                                             RES: by <= bv AND bx  FROM: bn AND by
+OUT by 336
+RESOLVINGc 1 ::: cf LSHIFT 1
+RESOLVINGc cy ::: cz OR cy
+                                                 RES: cy <= 1 AND cx  FROM: cz OR cy
+                                                   PARTS key cy 1 AND cx
+OPERATING ON 1 AND cx
+RESOLVINGb 1
+RESOLVINGc cx ::: 1 AND cx
+                                                   RES: cx <= cu AND cw  FROM: 1 AND cx
+                                                     PARTS key cx cu AND cw
+OPERATING ON cu AND cw
+RESOLVINGb cu
+                                                     RES: cu <= ci OR ct  FROM: cu AND cw
+                                                       PARTS key cu ci OR ct
+OPERATING ON ci OR ct
+RESOLVINGb ci
+                                                       RES: ci <= cg OR ch  FROM: ci OR ct
+                                                         PARTS key ci cg OR ch
+OPERATING ON cg OR ch
+RESOLVINGb cg
+                                                         RES: cg <= bn RSHIFT 1  FROM: cg OR ch
+                                                           PARTS key cg bn RSHIFT 1
+OPERATING ON bn RSHIFT 1
+RESOLVINGb bn
+                                                           RES: bn <= bl OR bm  FROM: bn RSHIFT 1
+OUT bn 1768
+RESOLVINGc 1 ::: bn RSHIFT 1
+RESOLVINGc ch ::: cg OR ch
+                                                         RES: ch <= cd LSHIFT 15  FROM: cg OR ch
+                                                           PARTS key ch cd LSHIFT 15
+OPERATING ON cd LSHIFT 15
+RESOLVINGb cd
+                                                           RES: cd <= 1 AND cc  FROM: cd LSHIFT 15
+OUT cd 0
+RESOLVINGc 15 ::: cd LSHIFT 15
+RESOLVINGc ct ::: ci OR ct
+                                                       RES: ct <= cq AND cs  FROM: ci OR ct
+                                                         PARTS key ct cq AND cs
+OPERATING ON cq AND cs
+RESOLVINGb cq
+                                                         RES: cq <= cj OR cp  FROM: cq AND cs
+                                                           PARTS key cq cj OR cp
+OPERATING ON cj OR cp
+RESOLVINGb cj
+                                                           RES: cj <= ci RSHIFT 2  FROM: cj OR cp
+                                                             PARTS key cj ci RSHIFT 2
+OPERATING ON ci RSHIFT 2
+RESOLVINGb ci
+                                                             RES: ci <= cg OR ch  FROM: ci RSHIFT 2
+OUT ci 884
+RESOLVINGc 2 ::: ci RSHIFT 2
+RESOLVINGc cp ::: cj OR cp
+                                                           RES: cp <= cm AND co  FROM: cj OR cp
+                                                             PARTS key cp cm AND co
+OPERATING ON cm AND co
+RESOLVINGb cm
+                                                             RES: cm <= ck OR cl  FROM: cm AND co
+                                                               PARTS key cm ck OR cl
+OPERATING ON ck OR cl
+RESOLVINGb ck
+                                                               RES: ck <= ci RSHIFT 3  FROM: ck OR cl
+                                                                 PARTS key ck ci RSHIFT 3
+OPERATING ON ci RSHIFT 3
+RESOLVINGb ci
+                                                                 RES: ci <= cg OR ch  FROM: ci RSHIFT 3
+OUT ci 884
+RESOLVINGc 3 ::: ci RSHIFT 3
+RESOLVINGc cl ::: ck OR cl
+                                                               RES: cl <= ci RSHIFT 5  FROM: ck OR cl
+                                                                 PARTS key cl ci RSHIFT 5
+OPERATING ON ci RSHIFT 5
+RESOLVINGb ci
+                                                                 RES: ci <= cg OR ch  FROM: ci RSHIFT 5
+OUT ci 884
+RESOLVINGc 5 ::: ci RSHIFT 5
+RESOLVINGc co ::: cm AND co
+                                                             RES: co <= NOT cn  FROM: cm AND co
+                                                               PARTS key co NOT cn
+RESOLVINGa cn
+                                                               RES: cn <= ck AND cl  FROM: NOT cn
+                                                                 PARTS key cn ck AND cl
+OPERATING ON ck AND cl
+RESOLVINGb ck
+                                                                 RES: ck <= ci RSHIFT 3  FROM: ck AND cl
+OUT ck 110
+RESOLVINGc cl ::: ck AND cl
+                                                                 RES: cl <= ci RSHIFT 5  FROM: ck AND cl
+OUT cl 27
+RESOLVINGc cs ::: cq AND cs
+                                                         RES: cs <= NOT cr  FROM: cq AND cs
+                                                           PARTS key cs NOT cr
+RESOLVINGa cr
+                                                           RES: cr <= cj AND cp  FROM: NOT cr
+                                                             PARTS key cr cj AND cp
+OPERATING ON cj AND cp
+RESOLVINGb cj
+                                                             RES: cj <= ci RSHIFT 2  FROM: cj AND cp
+OUT cj 221
+RESOLVINGc cp ::: cj AND cp
+                                                             RES: cp <= cm AND co  FROM: cj AND cp
+OUT cp 117
+RESOLVINGc cw ::: cu AND cw
+                                                     RES: cw <= NOT cv  FROM: cu AND cw
+                                                       PARTS key cw NOT cv
+RESOLVINGa cv
+                                                       RES: cv <= ci AND ct  FROM: NOT cv
+                                                         PARTS key cv ci AND ct
+OPERATING ON ci AND ct
+RESOLVINGb ci
+                                                         RES: ci <= cg OR ch  FROM: ci AND ct
+OUT ci 884
+RESOLVINGc ct ::: ci AND ct
+                                                         RES: ct <= cq AND cs  FROM: ci AND ct
+OUT ct 168
+RESOLVINGc 1 ::: da LSHIFT 1
+RESOLVINGc dt ::: du OR dt
+                                             RES: dt <= 1 AND ds  FROM: du OR dt
+                                               PARTS key dt 1 AND ds
+OPERATING ON 1 AND ds
+RESOLVINGb 1
+RESOLVINGc ds ::: 1 AND ds
+                                               RES: ds <= dp AND dr  FROM: 1 AND ds
+                                                 PARTS key ds dp AND dr
+OPERATING ON dp AND dr
+RESOLVINGb dp
+                                                 RES: dp <= dd OR do  FROM: dp AND dr
+                                                   PARTS key dp dd OR do
+OPERATING ON dd OR do
+RESOLVINGb dd
+                                                   RES: dd <= db OR dc  FROM: dd OR do
+                                                     PARTS key dd db OR dc
+OPERATING ON db OR dc
+RESOLVINGb db
+                                                     RES: db <= ci RSHIFT 1  FROM: db OR dc
+                                                       PARTS key db ci RSHIFT 1
+OPERATING ON ci RSHIFT 1
+RESOLVINGb ci
+                                                       RES: ci <= cg OR ch  FROM: ci RSHIFT 1
+OUT ci 884
+RESOLVINGc 1 ::: ci RSHIFT 1
+RESOLVINGc dc ::: db OR dc
+                                                     RES: dc <= cy LSHIFT 15  FROM: db OR dc
+                                                       PARTS key dc cy LSHIFT 15
+OPERATING ON cy LSHIFT 15
+RESOLVINGb cy
+                                                       RES: cy <= 1 AND cx  FROM: cy LSHIFT 15
+OUT cy 0
+RESOLVINGc 15 ::: cy LSHIFT 15
+RESOLVINGc do ::: dd OR do
+                                                   RES: do <= dl AND dn  FROM: dd OR do
+                                                     PARTS key do dl AND dn
+OPERATING ON dl AND dn
+RESOLVINGb dl
+                                                     RES: dl <= de OR dk  FROM: dl AND dn
+                                                       PARTS key dl de OR dk
+OPERATING ON de OR dk
+RESOLVINGb de
+                                                       RES: de <= dd RSHIFT 2  FROM: de OR dk
+                                                         PARTS key de dd RSHIFT 2
+OPERATING ON dd RSHIFT 2
+RESOLVINGb dd
+                                                         RES: dd <= db OR dc  FROM: dd RSHIFT 2
+OUT dd 442
+RESOLVINGc 2 ::: dd RSHIFT 2
+RESOLVINGc dk ::: de OR dk
+                                                       RES: dk <= dh AND dj  FROM: de OR dk
+                                                         PARTS key dk dh AND dj
+OPERATING ON dh AND dj
+RESOLVINGb dh
+                                                         RES: dh <= df OR dg  FROM: dh AND dj
+                                                           PARTS key dh df OR dg
+OPERATING ON df OR dg
+RESOLVINGb df
+                                                           RES: df <= dd RSHIFT 3  FROM: df OR dg
+                                                             PARTS key df dd RSHIFT 3
+OPERATING ON dd RSHIFT 3
+RESOLVINGb dd
+                                                             RES: dd <= db OR dc  FROM: dd RSHIFT 3
+OUT dd 442
+RESOLVINGc 3 ::: dd RSHIFT 3
+RESOLVINGc dg ::: df OR dg
+                                                           RES: dg <= dd RSHIFT 5  FROM: df OR dg
+                                                             PARTS key dg dd RSHIFT 5
+OPERATING ON dd RSHIFT 5
+RESOLVINGb dd
+                                                             RES: dd <= db OR dc  FROM: dd RSHIFT 5
+OUT dd 442
+RESOLVINGc 5 ::: dd RSHIFT 5
+RESOLVINGc dj ::: dh AND dj
+                                                         RES: dj <= NOT di  FROM: dh AND dj
+                                                           PARTS key dj NOT di
+RESOLVINGa di
+                                                           RES: di <= df AND dg  FROM: NOT di
+                                                             PARTS key di df AND dg
+OPERATING ON df AND dg
+RESOLVINGb df
+                                                             RES: df <= dd RSHIFT 3  FROM: df AND dg
+OUT df 55
+RESOLVINGc dg ::: df AND dg
+                                                             RES: dg <= dd RSHIFT 5  FROM: df AND dg
+OUT dg 13
+RESOLVINGc dn ::: dl AND dn
+                                                     RES: dn <= NOT dm  FROM: dl AND dn
+                                                       PARTS key dn NOT dm
+RESOLVINGa dm
+                                                       RES: dm <= de AND dk  FROM: NOT dm
+                                                         PARTS key dm de AND dk
+OPERATING ON de AND dk
+RESOLVINGb de
+                                                         RES: de <= dd RSHIFT 2  FROM: de AND dk
+OUT de 110
+RESOLVINGc dk ::: de AND dk
+                                                         RES: dk <= dh AND dj  FROM: de AND dk
+OUT dk 58
+RESOLVINGc dr ::: dp AND dr
+                                                 RES: dr <= NOT dq  FROM: dp AND dr
+                                                   PARTS key dr NOT dq
+RESOLVINGa dq
+                                                   RES: dq <= dd AND do  FROM: NOT dq
+                                                     PARTS key dq dd AND do
+OPERATING ON dd AND do
+RESOLVINGb dd
+                                                     RES: dd <= db OR dc  FROM: dd AND do
+OUT dd 442
+RESOLVINGc do ::: dd AND do
+                                                     RES: do <= dl AND dn  FROM: dd AND do
+OUT do 84
+RESOLVINGc 1 ::: dv LSHIFT 1
+RESOLVINGc eo ::: ep OR eo
+                                         RES: eo <= 1 AND en  FROM: ep OR eo
+                                           PARTS key eo 1 AND en
+OPERATING ON 1 AND en
+RESOLVINGb 1
+RESOLVINGc en ::: 1 AND en
+                                           RES: en <= ek AND em  FROM: 1 AND en
+                                             PARTS key en ek AND em
+OPERATING ON ek AND em
+RESOLVINGb ek
+                                             RES: ek <= dy OR ej  FROM: ek AND em
+                                               PARTS key ek dy OR ej
+OPERATING ON dy OR ej
+RESOLVINGb dy
+                                               RES: dy <= dw OR dx  FROM: dy OR ej
+                                                 PARTS key dy dw OR dx
+OPERATING ON dw OR dx
+RESOLVINGb dw
+                                                 RES: dw <= dd RSHIFT 1  FROM: dw OR dx
+                                                   PARTS key dw dd RSHIFT 1
+OPERATING ON dd RSHIFT 1
+RESOLVINGb dd
+                                                   RES: dd <= db OR dc  FROM: dd RSHIFT 1
+OUT dd 442
+RESOLVINGc 1 ::: dd RSHIFT 1
+RESOLVINGc dx ::: dw OR dx
+                                                 RES: dx <= dt LSHIFT 15  FROM: dw OR dx
+                                                   PARTS key dx dt LSHIFT 15
+OPERATING ON dt LSHIFT 15
+RESOLVINGb dt
+                                                   RES: dt <= 1 AND ds  FROM: dt LSHIFT 15
+OUT dt 0
+RESOLVINGc 15 ::: dt LSHIFT 15
+RESOLVINGc ej ::: dy OR ej
+                                               RES: ej <= eg AND ei  FROM: dy OR ej
+                                                 PARTS key ej eg AND ei
+OPERATING ON eg AND ei
+RESOLVINGb eg
+                                                 RES: eg <= dz OR ef  FROM: eg AND ei
+                                                   PARTS key eg dz OR ef
+OPERATING ON dz OR ef
+RESOLVINGb dz
+                                                   RES: dz <= dy RSHIFT 2  FROM: dz OR ef
+                                                     PARTS key dz dy RSHIFT 2
+OPERATING ON dy RSHIFT 2
+RESOLVINGb dy
+                                                     RES: dy <= dw OR dx  FROM: dy RSHIFT 2
+OUT dy 221
+RESOLVINGc 2 ::: dy RSHIFT 2
+RESOLVINGc ef ::: dz OR ef
+                                                   RES: ef <= ec AND ee  FROM: dz OR ef
+                                                     PARTS key ef ec AND ee
+OPERATING ON ec AND ee
+RESOLVINGb ec
+                                                     RES: ec <= ea OR eb  FROM: ec AND ee
+                                                       PARTS key ec ea OR eb
+OPERATING ON ea OR eb
+RESOLVINGb ea
+                                                       RES: ea <= dy RSHIFT 3  FROM: ea OR eb
+                                                         PARTS key ea dy RSHIFT 3
+OPERATING ON dy RSHIFT 3
+RESOLVINGb dy
+                                                         RES: dy <= dw OR dx  FROM: dy RSHIFT 3
+OUT dy 221
+RESOLVINGc 3 ::: dy RSHIFT 3
+RESOLVINGc eb ::: ea OR eb
+                                                       RES: eb <= dy RSHIFT 5  FROM: ea OR eb
+                                                         PARTS key eb dy RSHIFT 5
+OPERATING ON dy RSHIFT 5
+RESOLVINGb dy
+                                                         RES: dy <= dw OR dx  FROM: dy RSHIFT 5
+OUT dy 221
+RESOLVINGc 5 ::: dy RSHIFT 5
+RESOLVINGc ee ::: ec AND ee
+                                                     RES: ee <= NOT ed  FROM: ec AND ee
+                                                       PARTS key ee NOT ed
+RESOLVINGa ed
+                                                       RES: ed <= ea AND eb  FROM: NOT ed
+                                                         PARTS key ed ea AND eb
+OPERATING ON ea AND eb
+RESOLVINGb ea
+                                                         RES: ea <= dy RSHIFT 3  FROM: ea AND eb
+OUT ea 27
+RESOLVINGc eb ::: ea AND eb
+                                                         RES: eb <= dy RSHIFT 5  FROM: ea AND eb
+OUT eb 6
+RESOLVINGc ei ::: eg AND ei
+                                                 RES: ei <= NOT eh  FROM: eg AND ei
+                                                   PARTS key ei NOT eh
+RESOLVINGa eh
+                                                   RES: eh <= dz AND ef  FROM: NOT eh
+                                                     PARTS key eh dz AND ef
+OPERATING ON dz AND ef
+RESOLVINGb dz
+                                                     RES: dz <= dy RSHIFT 2  FROM: dz AND ef
+OUT dz 55
+RESOLVINGc ef ::: dz AND ef
+                                                     RES: ef <= ec AND ee  FROM: dz AND ef
+OUT ef 29
+RESOLVINGc em ::: ek AND em
+                                             RES: em <= NOT el  FROM: ek AND em
+                                               PARTS key em NOT el
+RESOLVINGa el
+                                               RES: el <= dy AND ej  FROM: NOT el
+                                                 PARTS key el dy AND ej
+OPERATING ON dy AND ej
+RESOLVINGb dy
+                                                 RES: dy <= dw OR dx  FROM: dy AND ej
+OUT dy 221
+RESOLVINGc ej ::: dy AND ej
+                                                 RES: ej <= eg AND ei  FROM: dy AND ej
+OUT ej 42
+RESOLVINGc 1 ::: eq LSHIFT 1
+RESOLVINGc fj ::: fk OR fj
+                                     RES: fj <= 1 AND fi  FROM: fk OR fj
+                                       PARTS key fj 1 AND fi
+OPERATING ON 1 AND fi
+RESOLVINGb 1
+RESOLVINGc fi ::: 1 AND fi
+                                       RES: fi <= ff AND fh  FROM: 1 AND fi
+                                         PARTS key fi ff AND fh
+OPERATING ON ff AND fh
+RESOLVINGb ff
+                                         RES: ff <= et OR fe  FROM: ff AND fh
+                                           PARTS key ff et OR fe
+OPERATING ON et OR fe
+RESOLVINGb et
+                                           RES: et <= er OR es  FROM: et OR fe
+                                             PARTS key et er OR es
+OPERATING ON er OR es
+RESOLVINGb er
+                                             RES: er <= dy RSHIFT 1  FROM: er OR es
+                                               PARTS key er dy RSHIFT 1
+OPERATING ON dy RSHIFT 1
+RESOLVINGb dy
+                                               RES: dy <= dw OR dx  FROM: dy RSHIFT 1
+OUT dy 221
+RESOLVINGc 1 ::: dy RSHIFT 1
+RESOLVINGc es ::: er OR es
+                                             RES: es <= eo LSHIFT 15  FROM: er OR es
+                                               PARTS key es eo LSHIFT 15
+OPERATING ON eo LSHIFT 15
+RESOLVINGb eo
+                                               RES: eo <= 1 AND en  FROM: eo LSHIFT 15
+OUT eo 1
+RESOLVINGc 15 ::: eo LSHIFT 15
+RESOLVINGc fe ::: et OR fe
+                                           RES: fe <= fb AND fd  FROM: et OR fe
+                                             PARTS key fe fb AND fd
+OPERATING ON fb AND fd
+RESOLVINGb fb
+                                             RES: fb <= eu OR fa  FROM: fb AND fd
+                                               PARTS key fb eu OR fa
+OPERATING ON eu OR fa
+RESOLVINGb eu
+                                               RES: eu <= et RSHIFT 2  FROM: eu OR fa
+                                                 PARTS key eu et RSHIFT 2
+OPERATING ON et RSHIFT 2
+RESOLVINGb et
+                                                 RES: et <= er OR es  FROM: et RSHIFT 2
+OUT et 32878
+RESOLVINGc 2 ::: et RSHIFT 2
+RESOLVINGc fa ::: eu OR fa
+                                               RES: fa <= ex AND ez  FROM: eu OR fa
+                                                 PARTS key fa ex AND ez
+OPERATING ON ex AND ez
+RESOLVINGb ex
+                                                 RES: ex <= ev OR ew  FROM: ex AND ez
+                                                   PARTS key ex ev OR ew
+OPERATING ON ev OR ew
+RESOLVINGb ev
+                                                   RES: ev <= et RSHIFT 3  FROM: ev OR ew
+                                                     PARTS key ev et RSHIFT 3
+OPERATING ON et RSHIFT 3
+RESOLVINGb et
+                                                     RES: et <= er OR es  FROM: et RSHIFT 3
+OUT et 32878
+RESOLVINGc 3 ::: et RSHIFT 3
+RESOLVINGc ew ::: ev OR ew
+                                                   RES: ew <= et RSHIFT 5  FROM: ev OR ew
+                                                     PARTS key ew et RSHIFT 5
+OPERATING ON et RSHIFT 5
+RESOLVINGb et
+                                                     RES: et <= er OR es  FROM: et RSHIFT 5
+OUT et 32878
+RESOLVINGc 5 ::: et RSHIFT 5
+RESOLVINGc ez ::: ex AND ez
+                                                 RES: ez <= NOT ey  FROM: ex AND ez
+                                                   PARTS key ez NOT ey
+RESOLVINGa ey
+                                                   RES: ey <= ev AND ew  FROM: NOT ey
+                                                     PARTS key ey ev AND ew
+OPERATING ON ev AND ew
+RESOLVINGb ev
+                                                     RES: ev <= et RSHIFT 3  FROM: ev AND ew
+OUT ev 4109
+RESOLVINGc ew ::: ev AND ew
+                                                     RES: ew <= et RSHIFT 5  FROM: ev AND ew
+OUT ew 1027
+RESOLVINGc fd ::: fb AND fd
+                                             RES: fd <= NOT fc  FROM: fb AND fd
+                                               PARTS key fd NOT fc
+RESOLVINGa fc
+                                               RES: fc <= eu AND fa  FROM: NOT fc
+                                                 PARTS key fc eu AND fa
+OPERATING ON eu AND fa
+RESOLVINGb eu
+                                                 RES: eu <= et RSHIFT 2  FROM: eu AND fa
+OUT eu 8219
+RESOLVINGc fa ::: eu AND fa
+                                                 RES: fa <= ex AND ez  FROM: eu AND fa
+OUT fa 5134
+RESOLVINGc fh ::: ff AND fh
+                                         RES: fh <= NOT fg  FROM: ff AND fh
+                                           PARTS key fh NOT fg
+RESOLVINGa fg
+                                           RES: fg <= et AND fe  FROM: NOT fg
+                                             PARTS key fg et AND fe
+OPERATING ON et AND fe
+RESOLVINGb et
+                                             RES: et <= er OR es  FROM: et AND fe
+OUT et 32878
+RESOLVINGc fe ::: et AND fe
+                                             RES: fe <= fb AND fd  FROM: et AND fe
+OUT fe 13333
+RESOLVINGc 1 ::: fl LSHIFT 1
+RESOLVINGc ge ::: gf OR ge
+                                 RES: ge <= 1 AND gd  FROM: gf OR ge
+                                   PARTS key ge 1 AND gd
+OPERATING ON 1 AND gd
+RESOLVINGb 1
+RESOLVINGc gd ::: 1 AND gd
+                                   RES: gd <= ga AND gc  FROM: 1 AND gd
+                                     PARTS key gd ga AND gc
+OPERATING ON ga AND gc
+RESOLVINGb ga
+                                     RES: ga <= fo OR fz  FROM: ga AND gc
+                                       PARTS key ga fo OR fz
+OPERATING ON fo OR fz
+RESOLVINGb fo
+                                       RES: fo <= fm OR fn  FROM: fo OR fz
+                                         PARTS key fo fm OR fn
+OPERATING ON fm OR fn
+RESOLVINGb fm
+                                         RES: fm <= et RSHIFT 1  FROM: fm OR fn
+                                           PARTS key fm et RSHIFT 1
+OPERATING ON et RSHIFT 1
+RESOLVINGb et
+                                           RES: et <= er OR es  FROM: et RSHIFT 1
+OUT et 32878
+RESOLVINGc 1 ::: et RSHIFT 1
+RESOLVINGc fn ::: fm OR fn
+                                         RES: fn <= fj LSHIFT 15  FROM: fm OR fn
+                                           PARTS key fn fj LSHIFT 15
+OPERATING ON fj LSHIFT 15
+RESOLVINGb fj
+                                           RES: fj <= 1 AND fi  FROM: fj LSHIFT 15
+OUT fj 1
+RESOLVINGc 15 ::: fj LSHIFT 15
+RESOLVINGc fz ::: fo OR fz
+                                       RES: fz <= fw AND fy  FROM: fo OR fz
+                                         PARTS key fz fw AND fy
+OPERATING ON fw AND fy
+RESOLVINGb fw
+                                         RES: fw <= fp OR fv  FROM: fw AND fy
+                                           PARTS key fw fp OR fv
+OPERATING ON fp OR fv
+RESOLVINGb fp
+                                           RES: fp <= fo RSHIFT 2  FROM: fp OR fv
+                                             PARTS key fp fo RSHIFT 2
+OPERATING ON fo RSHIFT 2
+RESOLVINGb fo
+                                             RES: fo <= fm OR fn  FROM: fo RSHIFT 2
+OUT fo 49207
+RESOLVINGc 2 ::: fo RSHIFT 2
+RESOLVINGc fv ::: fp OR fv
+                                           RES: fv <= fs AND fu  FROM: fp OR fv
+                                             PARTS key fv fs AND fu
+OPERATING ON fs AND fu
+RESOLVINGb fs
+                                             RES: fs <= fq OR fr  FROM: fs AND fu
+                                               PARTS key fs fq OR fr
+OPERATING ON fq OR fr
+RESOLVINGb fq
+                                               RES: fq <= fo RSHIFT 3  FROM: fq OR fr
+                                                 PARTS key fq fo RSHIFT 3
+OPERATING ON fo RSHIFT 3
+RESOLVINGb fo
+                                                 RES: fo <= fm OR fn  FROM: fo RSHIFT 3
+OUT fo 49207
+RESOLVINGc 3 ::: fo RSHIFT 3
+RESOLVINGc fr ::: fq OR fr
+                                               RES: fr <= fo RSHIFT 5  FROM: fq OR fr
+                                                 PARTS key fr fo RSHIFT 5
+OPERATING ON fo RSHIFT 5
+RESOLVINGb fo
+                                                 RES: fo <= fm OR fn  FROM: fo RSHIFT 5
+OUT fo 49207
+RESOLVINGc 5 ::: fo RSHIFT 5
+RESOLVINGc fu ::: fs AND fu
+                                             RES: fu <= NOT ft  FROM: fs AND fu
+                                               PARTS key fu NOT ft
+RESOLVINGa ft
+                                               RES: ft <= fq AND fr  FROM: NOT ft
+                                                 PARTS key ft fq AND fr
+OPERATING ON fq AND fr
+RESOLVINGb fq
+                                                 RES: fq <= fo RSHIFT 3  FROM: fq AND fr
+OUT fq 6150
+RESOLVINGc fr ::: fq AND fr
+                                                 RES: fr <= fo RSHIFT 5  FROM: fq AND fr
+OUT fr 1537
+RESOLVINGc fy ::: fw AND fy
+                                         RES: fy <= NOT fx  FROM: fw AND fy
+                                           PARTS key fy NOT fx
+RESOLVINGa fx
+                                           RES: fx <= fp AND fv  FROM: NOT fx
+                                             PARTS key fx fp AND fv
+OPERATING ON fp AND fv
+RESOLVINGb fp
+                                             RES: fp <= fo RSHIFT 2  FROM: fp AND fv
+OUT fp 12301
+RESOLVINGc fv ::: fp AND fv
+                                             RES: fv <= fs AND fu  FROM: fp AND fv
+OUT fv 7687
+RESOLVINGc gc ::: ga AND gc
+                                     RES: gc <= NOT gb  FROM: ga AND gc
+                                       PARTS key gc NOT gb
+RESOLVINGa gb
+                                       RES: gb <= fo AND fz  FROM: NOT gb
+                                         PARTS key gb fo AND fz
+OPERATING ON fo AND fz
+RESOLVINGb fo
+                                         RES: fo <= fm OR fn  FROM: fo AND fz
+OUT fo 49207
+RESOLVINGc fz ::: fo AND fz
+                                         RES: fz <= fw AND fy  FROM: fo AND fz
+OUT fz 11786
+RESOLVINGc 1 ::: gg LSHIFT 1
+RESOLVINGc gz ::: ha OR gz
+                             RES: gz <= 1 AND gy  FROM: ha OR gz
+                               PARTS key gz 1 AND gy
+OPERATING ON 1 AND gy
+RESOLVINGb 1
+RESOLVINGc gy ::: 1 AND gy
+                               RES: gy <= gv AND gx  FROM: 1 AND gy
+                                 PARTS key gy gv AND gx
+OPERATING ON gv AND gx
+RESOLVINGb gv
+                                 RES: gv <= gj OR gu  FROM: gv AND gx
+                                   PARTS key gv gj OR gu
+OPERATING ON gj OR gu
+RESOLVINGb gj
+                                   RES: gj <= gh OR gi  FROM: gj OR gu
+                                     PARTS key gj gh OR gi
+OPERATING ON gh OR gi
+RESOLVINGb gh
+                                     RES: gh <= fo RSHIFT 1  FROM: gh OR gi
+                                       PARTS key gh fo RSHIFT 1
+OPERATING ON fo RSHIFT 1
+RESOLVINGb fo
+                                       RES: fo <= fm OR fn  FROM: fo RSHIFT 1
+OUT fo 49207
+RESOLVINGc 1 ::: fo RSHIFT 1
+RESOLVINGc gi ::: gh OR gi
+                                     RES: gi <= ge LSHIFT 15  FROM: gh OR gi
+                                       PARTS key gi ge LSHIFT 15
+OPERATING ON ge LSHIFT 15
+RESOLVINGb ge
+                                       RES: ge <= 1 AND gd  FROM: ge LSHIFT 15
+OUT ge 1
+RESOLVINGc 15 ::: ge LSHIFT 15
+RESOLVINGc gu ::: gj OR gu
+                                   RES: gu <= gr AND gt  FROM: gj OR gu
+                                     PARTS key gu gr AND gt
+OPERATING ON gr AND gt
+RESOLVINGb gr
+                                     RES: gr <= gk OR gq  FROM: gr AND gt
+                                       PARTS key gr gk OR gq
+OPERATING ON gk OR gq
+RESOLVINGb gk
+                                       RES: gk <= gj RSHIFT 2  FROM: gk OR gq
+                                         PARTS key gk gj RSHIFT 2
+OPERATING ON gj RSHIFT 2
+RESOLVINGb gj
+                                         RES: gj <= gh OR gi  FROM: gj RSHIFT 2
+OUT gj 57371
+RESOLVINGc 2 ::: gj RSHIFT 2
+RESOLVINGc gq ::: gk OR gq
+                                       RES: gq <= gn AND gp  FROM: gk OR gq
+                                         PARTS key gq gn AND gp
+OPERATING ON gn AND gp
+RESOLVINGb gn
+                                         RES: gn <= gl OR gm  FROM: gn AND gp
+                                           PARTS key gn gl OR gm
+OPERATING ON gl OR gm
+RESOLVINGb gl
+                                           RES: gl <= gj RSHIFT 3  FROM: gl OR gm
+                                             PARTS key gl gj RSHIFT 3
+OPERATING ON gj RSHIFT 3
+RESOLVINGb gj
+                                             RES: gj <= gh OR gi  FROM: gj RSHIFT 3
+OUT gj 57371
+RESOLVINGc 3 ::: gj RSHIFT 3
+RESOLVINGc gm ::: gl OR gm
+                                           RES: gm <= gj RSHIFT 5  FROM: gl OR gm
+                                             PARTS key gm gj RSHIFT 5
+OPERATING ON gj RSHIFT 5
+RESOLVINGb gj
+                                             RES: gj <= gh OR gi  FROM: gj RSHIFT 5
+OUT gj 57371
+RESOLVINGc 5 ::: gj RSHIFT 5
+RESOLVINGc gp ::: gn AND gp
+                                         RES: gp <= NOT go  FROM: gn AND gp
+                                           PARTS key gp NOT go
+RESOLVINGa go
+                                           RES: go <= gl AND gm  FROM: NOT go
+                                             PARTS key go gl AND gm
+OPERATING ON gl AND gm
+RESOLVINGb gl
+                                             RES: gl <= gj RSHIFT 3  FROM: gl AND gm
+OUT gl 7171
+RESOLVINGc gm ::: gl AND gm
+                                             RES: gm <= gj RSHIFT 5  FROM: gl AND gm
+OUT gm 1792
+RESOLVINGc gt ::: gr AND gt
+                                     RES: gt <= NOT gs  FROM: gr AND gt
+                                       PARTS key gt NOT gs
+RESOLVINGa gs
+                                       RES: gs <= gk AND gq  FROM: NOT gs
+                                         PARTS key gs gk AND gq
+OPERATING ON gk AND gq
+RESOLVINGb gk
+                                         RES: gk <= gj RSHIFT 2  FROM: gk AND gq
+OUT gk 14342
+RESOLVINGc gq ::: gk AND gq
+                                         RES: gq <= gn AND gp  FROM: gk AND gq
+OUT gq 6915
+RESOLVINGc gx ::: gv AND gx
+                                 RES: gx <= NOT gw  FROM: gv AND gx
+                                   PARTS key gx NOT gw
+RESOLVINGa gw
+                                   RES: gw <= gj AND gu  FROM: NOT gw
+                                     PARTS key gw gj AND gu
+OPERATING ON gj AND gu
+RESOLVINGb gj
+                                     RES: gj <= gh OR gi  FROM: gj AND gu
+OUT gj 57371
+RESOLVINGc gu ::: gj AND gu
+                                     RES: gu <= gr AND gt  FROM: gj AND gu
+OUT gu 8965
+RESOLVINGc 1 ::: hb LSHIFT 1
+RESOLVINGc hu ::: hv OR hu
+                         RES: hu <= 1 AND ht  FROM: hv OR hu
+                           PARTS key hu 1 AND ht
+OPERATING ON 1 AND ht
+RESOLVINGb 1
+RESOLVINGc ht ::: 1 AND ht
+                           RES: ht <= hq AND hs  FROM: 1 AND ht
+                             PARTS key ht hq AND hs
+OPERATING ON hq AND hs
+RESOLVINGb hq
+                             RES: hq <= he OR hp  FROM: hq AND hs
+                               PARTS key hq he OR hp
+OPERATING ON he OR hp
+RESOLVINGb he
+                               RES: he <= hc OR hd  FROM: he OR hp
+                                 PARTS key he hc OR hd
+OPERATING ON hc OR hd
+RESOLVINGb hc
+                                 RES: hc <= gj RSHIFT 1  FROM: hc OR hd
+                                   PARTS key hc gj RSHIFT 1
+OPERATING ON gj RSHIFT 1
+RESOLVINGb gj
+                                   RES: gj <= gh OR gi  FROM: gj RSHIFT 1
+OUT gj 57371
+RESOLVINGc 1 ::: gj RSHIFT 1
+RESOLVINGc hd ::: hc OR hd
+                                 RES: hd <= gz LSHIFT 15  FROM: hc OR hd
+                                   PARTS key hd gz LSHIFT 15
+OPERATING ON gz LSHIFT 15
+RESOLVINGb gz
+                                   RES: gz <= 1 AND gy  FROM: gz LSHIFT 15
+OUT gz 0
+RESOLVINGc 15 ::: gz LSHIFT 15
+RESOLVINGc hp ::: he OR hp
+                               RES: hp <= hm AND ho  FROM: he OR hp
+                                 PARTS key hp hm AND ho
+OPERATING ON hm AND ho
+RESOLVINGb hm
+                                 RES: hm <= hf OR hl  FROM: hm AND ho
+                                   PARTS key hm hf OR hl
+OPERATING ON hf OR hl
+RESOLVINGb hf
+                                   RES: hf <= he RSHIFT 2  FROM: hf OR hl
+                                     PARTS key hf he RSHIFT 2
+OPERATING ON he RSHIFT 2
+RESOLVINGb he
+                                     RES: he <= hc OR hd  FROM: he RSHIFT 2
+OUT he 28685
+RESOLVINGc 2 ::: he RSHIFT 2
+RESOLVINGc hl ::: hf OR hl
+                                   RES: hl <= hi AND hk  FROM: hf OR hl
+                                     PARTS key hl hi AND hk
+OPERATING ON hi AND hk
+RESOLVINGb hi
+                                     RES: hi <= hg OR hh  FROM: hi AND hk
+                                       PARTS key hi hg OR hh
+OPERATING ON hg OR hh
+RESOLVINGb hg
+                                       RES: hg <= he RSHIFT 3  FROM: hg OR hh
+                                         PARTS key hg he RSHIFT 3
+OPERATING ON he RSHIFT 3
+RESOLVINGb he
+                                         RES: he <= hc OR hd  FROM: he RSHIFT 3
+OUT he 28685
+RESOLVINGc 3 ::: he RSHIFT 3
+RESOLVINGc hh ::: hg OR hh
+                                       RES: hh <= he RSHIFT 5  FROM: hg OR hh
+                                         PARTS key hh he RSHIFT 5
+OPERATING ON he RSHIFT 5
+RESOLVINGb he
+                                         RES: he <= hc OR hd  FROM: he RSHIFT 5
+OUT he 28685
+RESOLVINGc 5 ::: he RSHIFT 5
+RESOLVINGc hk ::: hi AND hk
+                                     RES: hk <= NOT hj  FROM: hi AND hk
+                                       PARTS key hk NOT hj
+RESOLVINGa hj
+                                       RES: hj <= hg AND hh  FROM: NOT hj
+                                         PARTS key hj hg AND hh
+OPERATING ON hg AND hh
+RESOLVINGb hg
+                                         RES: hg <= he RSHIFT 3  FROM: hg AND hh
+OUT hg 3585
+RESOLVINGc hh ::: hg AND hh
+                                         RES: hh <= he RSHIFT 5  FROM: hg AND hh
+OUT hh 896
+RESOLVINGc ho ::: hm AND ho
+                                 RES: ho <= NOT hn  FROM: hm AND ho
+                                   PARTS key ho NOT hn
+RESOLVINGa hn
+                                   RES: hn <= hf AND hl  FROM: NOT hn
+                                     PARTS key hn hf AND hl
+OPERATING ON hf AND hl
+RESOLVINGb hf
+                                     RES: hf <= he RSHIFT 2  FROM: hf AND hl
+OUT hf 7171
+RESOLVINGc hl ::: hf AND hl
+                                     RES: hl <= hi AND hk  FROM: hf AND hl
+OUT hl 3457
+RESOLVINGc hs ::: hq AND hs
+                             RES: hs <= NOT hr  FROM: hq AND hs
+                               PARTS key hs NOT hr
+RESOLVINGa hr
+                               RES: hr <= he AND hp  FROM: NOT hr
+                                 PARTS key hr he AND hp
+OPERATING ON he AND hp
+RESOLVINGb he
+                                 RES: he <= hc OR hd  FROM: he AND hp
+OUT he 28685
+RESOLVINGc hp ::: he AND hp
+                                 RES: hp <= hm AND ho  FROM: he AND hp
+OUT hp 4482
+RESOLVINGc 1 ::: hw LSHIFT 1
+RESOLVINGc ip ::: iq OR ip
+                     RES: ip <= 1 AND io  FROM: iq OR ip
+                       PARTS key ip 1 AND io
+OPERATING ON 1 AND io
+RESOLVINGb 1
+RESOLVINGc io ::: 1 AND io
+                       RES: io <= il AND in  FROM: 1 AND io
+                         PARTS key io il AND in
+OPERATING ON il AND in
+RESOLVINGb il
+                         RES: il <= hz OR ik  FROM: il AND in
+                           PARTS key il hz OR ik
+OPERATING ON hz OR ik
+RESOLVINGb hz
+                           RES: hz <= hx OR hy  FROM: hz OR ik
+                             PARTS key hz hx OR hy
+OPERATING ON hx OR hy
+RESOLVINGb hx
+                             RES: hx <= he RSHIFT 1  FROM: hx OR hy
+                               PARTS key hx he RSHIFT 1
+OPERATING ON he RSHIFT 1
+RESOLVINGb he
+                               RES: he <= hc OR hd  FROM: he RSHIFT 1
+OUT he 28685
+RESOLVINGc 1 ::: he RSHIFT 1
+RESOLVINGc hy ::: hx OR hy
+                             RES: hy <= hu LSHIFT 15  FROM: hx OR hy
+                               PARTS key hy hu LSHIFT 15
+OPERATING ON hu LSHIFT 15
+RESOLVINGb hu
+                               RES: hu <= 1 AND ht  FROM: hu LSHIFT 15
+OUT hu 1
+RESOLVINGc 15 ::: hu LSHIFT 15
+RESOLVINGc ik ::: hz OR ik
+                           RES: ik <= ih AND ij  FROM: hz OR ik
+                             PARTS key ik ih AND ij
+OPERATING ON ih AND ij
+RESOLVINGb ih
+                             RES: ih <= ia OR ig  FROM: ih AND ij
+                               PARTS key ih ia OR ig
+OPERATING ON ia OR ig
+RESOLVINGb ia
+                               RES: ia <= hz RSHIFT 2  FROM: ia OR ig
+                                 PARTS key ia hz RSHIFT 2
+OPERATING ON hz RSHIFT 2
+RESOLVINGb hz
+                                 RES: hz <= hx OR hy  FROM: hz RSHIFT 2
+OUT hz 47110
+RESOLVINGc 2 ::: hz RSHIFT 2
+RESOLVINGc ig ::: ia OR ig
+                               RES: ig <= id AND if  FROM: ia OR ig
+                                 PARTS key ig id AND if
+OPERATING ON id AND if
+RESOLVINGb id
+                                 RES: id <= ib OR ic  FROM: id AND if
+                                   PARTS key id ib OR ic
+OPERATING ON ib OR ic
+RESOLVINGb ib
+                                   RES: ib <= hz RSHIFT 3  FROM: ib OR ic
+                                     PARTS key ib hz RSHIFT 3
+OPERATING ON hz RSHIFT 3
+RESOLVINGb hz
+                                     RES: hz <= hx OR hy  FROM: hz RSHIFT 3
+OUT hz 47110
+RESOLVINGc 3 ::: hz RSHIFT 3
+RESOLVINGc ic ::: ib OR ic
+                                   RES: ic <= hz RSHIFT 5  FROM: ib OR ic
+                                     PARTS key ic hz RSHIFT 5
+OPERATING ON hz RSHIFT 5
+RESOLVINGb hz
+                                     RES: hz <= hx OR hy  FROM: hz RSHIFT 5
+OUT hz 47110
+RESOLVINGc 5 ::: hz RSHIFT 5
+RESOLVINGc if ::: id AND if
+                                 RES: if <= NOT ie  FROM: id AND if
+                                   PARTS key if NOT ie
+RESOLVINGa ie
+                                   RES: ie <= ib AND ic  FROM: NOT ie
+                                     PARTS key ie ib AND ic
+OPERATING ON ib AND ic
+RESOLVINGb ib
+                                     RES: ib <= hz RSHIFT 3  FROM: ib AND ic
+OUT ib 5888
+RESOLVINGc ic ::: ib AND ic
+                                     RES: ic <= hz RSHIFT 5  FROM: ib AND ic
+OUT ic 1472
+RESOLVINGc ij ::: ih AND ij
+                             RES: ij <= NOT ii  FROM: ih AND ij
+                               PARTS key ij NOT ii
+RESOLVINGa ii
+                               RES: ii <= ia AND ig  FROM: NOT ii
+                                 PARTS key ii ia AND ig
+OPERATING ON ia AND ig
+RESOLVINGb ia
+                                 RES: ia <= hz RSHIFT 2  FROM: ia AND ig
+OUT ia 11777
+RESOLVINGc ig ::: ia AND ig
+                                 RES: ig <= id AND if  FROM: ia AND ig
+OUT ig 4800
+RESOLVINGc in ::: il AND in
+                         RES: in <= NOT im  FROM: il AND in
+                           PARTS key in NOT im
+RESOLVINGa im
+                           RES: im <= hz AND ik  FROM: NOT im
+                             PARTS key im hz AND ik
+OPERATING ON hz AND ik
+RESOLVINGb hz
+                             RES: hz <= hx OR hy  FROM: hz AND ik
+OUT hz 47110
+RESOLVINGc ik ::: hz AND ik
+                             RES: ik <= ih AND ij  FROM: hz AND ik
+OUT ik 15553
+RESOLVINGc 1 ::: ir LSHIFT 1
+RESOLVINGc jk ::: jl OR jk
+                 RES: jk <= 1 AND jj  FROM: jl OR jk
+                   PARTS key jk 1 AND jj
+OPERATING ON 1 AND jj
+RESOLVINGb 1
+RESOLVINGc jj ::: 1 AND jj
+                   RES: jj <= jg AND ji  FROM: 1 AND jj
+                     PARTS key jj jg AND ji
+OPERATING ON jg AND ji
+RESOLVINGb jg
+                     RES: jg <= iu OR jf  FROM: jg AND ji
+                       PARTS key jg iu OR jf
+OPERATING ON iu OR jf
+RESOLVINGb iu
+                       RES: iu <= is OR it  FROM: iu OR jf
+                         PARTS key iu is OR it
+OPERATING ON is OR it
+RESOLVINGb is
+                         RES: is <= hz RSHIFT 1  FROM: is OR it
+                           PARTS key is hz RSHIFT 1
+OPERATING ON hz RSHIFT 1
+RESOLVINGb hz
+                           RES: hz <= hx OR hy  FROM: hz RSHIFT 1
+OUT hz 47110
+RESOLVINGc 1 ::: hz RSHIFT 1
+RESOLVINGc it ::: is OR it
+                         RES: it <= ip LSHIFT 15  FROM: is OR it
+                           PARTS key it ip LSHIFT 15
+OPERATING ON ip LSHIFT 15
+RESOLVINGb ip
+                           RES: ip <= 1 AND io  FROM: ip LSHIFT 15
+OUT ip 1
+RESOLVINGc 15 ::: ip LSHIFT 15
+RESOLVINGc jf ::: iu OR jf
+                       RES: jf <= jc AND je  FROM: iu OR jf
+                         PARTS key jf jc AND je
+OPERATING ON jc AND je
+RESOLVINGb jc
+                         RES: jc <= iv OR jb  FROM: jc AND je
+                           PARTS key jc iv OR jb
+OPERATING ON iv OR jb
+RESOLVINGb iv
+                           RES: iv <= iu RSHIFT 2  FROM: iv OR jb
+                             PARTS key iv iu RSHIFT 2
+OPERATING ON iu RSHIFT 2
+RESOLVINGb iu
+                             RES: iu <= is OR it  FROM: iu RSHIFT 2
+OUT iu 56323
+RESOLVINGc 2 ::: iu RSHIFT 2
+RESOLVINGc jb ::: iv OR jb
+                           RES: jb <= iy AND ja  FROM: iv OR jb
+                             PARTS key jb iy AND ja
+OPERATING ON iy AND ja
+RESOLVINGb iy
+                             RES: iy <= iw OR ix  FROM: iy AND ja
+                               PARTS key iy iw OR ix
+OPERATING ON iw OR ix
+RESOLVINGb iw
+                               RES: iw <= iu RSHIFT 3  FROM: iw OR ix
+                                 PARTS key iw iu RSHIFT 3
+OPERATING ON iu RSHIFT 3
+RESOLVINGb iu
+                                 RES: iu <= is OR it  FROM: iu RSHIFT 3
+OUT iu 56323
+RESOLVINGc 3 ::: iu RSHIFT 3
+RESOLVINGc ix ::: iw OR ix
+                               RES: ix <= iu RSHIFT 5  FROM: iw OR ix
+                                 PARTS key ix iu RSHIFT 5
+OPERATING ON iu RSHIFT 5
+RESOLVINGb iu
+                                 RES: iu <= is OR it  FROM: iu RSHIFT 5
+OUT iu 56323
+RESOLVINGc 5 ::: iu RSHIFT 5
+RESOLVINGc ja ::: iy AND ja
+                             RES: ja <= NOT iz  FROM: iy AND ja
+                               PARTS key ja NOT iz
+RESOLVINGa iz
+                               RES: iz <= iw AND ix  FROM: NOT iz
+                                 PARTS key iz iw AND ix
+OPERATING ON iw AND ix
+RESOLVINGb iw
+                                 RES: iw <= iu RSHIFT 3  FROM: iw AND ix
+OUT iw 7040
+RESOLVINGc ix ::: iw AND ix
+                                 RES: ix <= iu RSHIFT 5  FROM: iw AND ix
+OUT ix 1760
+RESOLVINGc je ::: jc AND je
+                         RES: je <= NOT jd  FROM: jc AND je
+                           PARTS key je NOT jd
+RESOLVINGa jd
+                           RES: jd <= iv AND jb  FROM: NOT jd
+                             PARTS key jd iv AND jb
+OPERATING ON iv AND jb
+RESOLVINGb iv
+                             RES: iv <= iu RSHIFT 2  FROM: iv AND jb
+OUT iv 14080
+RESOLVINGc jb ::: iv AND jb
+                             RES: jb <= iy AND ja  FROM: iv AND jb
+OUT jb 7520
+RESOLVINGc ji ::: jg AND ji
+                     RES: ji <= NOT jh  FROM: jg AND ji
+                       PARTS key ji NOT jh
+RESOLVINGa jh
+                       RES: jh <= iu AND jf  FROM: NOT jh
+                         PARTS key jh iu AND jf
+OPERATING ON iu AND jf
+RESOLVINGb iu
+                         RES: iu <= is OR it  FROM: iu AND jf
+OUT iu 56323
+RESOLVINGc jf ::: iu AND jf
+                         RES: jf <= jc AND je  FROM: iu AND jf
+OUT jf 10848
+RESOLVINGc 1 ::: jm LSHIFT 1
+RESOLVINGc kf ::: kg OR kf
+             RES: kf <= 1 AND ke  FROM: kg OR kf
+               PARTS key kf 1 AND ke
+OPERATING ON 1 AND ke
+RESOLVINGb 1
+RESOLVINGc ke ::: 1 AND ke
+               RES: ke <= kb AND kd  FROM: 1 AND ke
+                 PARTS key ke kb AND kd
+OPERATING ON kb AND kd
+RESOLVINGb kb
+                 RES: kb <= jp OR ka  FROM: kb AND kd
+                   PARTS key kb jp OR ka
+OPERATING ON jp OR ka
+RESOLVINGb jp
+                   RES: jp <= jn OR jo  FROM: jp OR ka
+                     PARTS key jp jn OR jo
+OPERATING ON jn OR jo
+RESOLVINGb jn
+                     RES: jn <= iu RSHIFT 1  FROM: jn OR jo
+                       PARTS key jn iu RSHIFT 1
+OPERATING ON iu RSHIFT 1
+RESOLVINGb iu
+                       RES: iu <= is OR it  FROM: iu RSHIFT 1
+OUT iu 56323
+RESOLVINGc 1 ::: iu RSHIFT 1
+RESOLVINGc jo ::: jn OR jo
+                     RES: jo <= jk LSHIFT 15  FROM: jn OR jo
+                       PARTS key jo jk LSHIFT 15
+OPERATING ON jk LSHIFT 15
+RESOLVINGb jk
+                       RES: jk <= 1 AND jj  FROM: jk LSHIFT 15
+OUT jk 1
+RESOLVINGc 15 ::: jk LSHIFT 15
+RESOLVINGc ka ::: jp OR ka
+                   RES: ka <= jx AND jz  FROM: jp OR ka
+                     PARTS key ka jx AND jz
+OPERATING ON jx AND jz
+RESOLVINGb jx
+                     RES: jx <= jq OR jw  FROM: jx AND jz
+                       PARTS key jx jq OR jw
+OPERATING ON jq OR jw
+RESOLVINGb jq
+                       RES: jq <= jp RSHIFT 2  FROM: jq OR jw
+                         PARTS key jq jp RSHIFT 2
+OPERATING ON jp RSHIFT 2
+RESOLVINGb jp
+                         RES: jp <= jn OR jo  FROM: jp RSHIFT 2
+OUT jp 60929
+RESOLVINGc 2 ::: jp RSHIFT 2
+RESOLVINGc jw ::: jq OR jw
+                       RES: jw <= jt AND jv  FROM: jq OR jw
+                         PARTS key jw jt AND jv
+OPERATING ON jt AND jv
+RESOLVINGb jt
+                         RES: jt <= jr OR js  FROM: jt AND jv
+                           PARTS key jt jr OR js
+OPERATING ON jr OR js
+RESOLVINGb jr
+                           RES: jr <= jp RSHIFT 3  FROM: jr OR js
+                             PARTS key jr jp RSHIFT 3
+OPERATING ON jp RSHIFT 3
+RESOLVINGb jp
+                             RES: jp <= jn OR jo  FROM: jp RSHIFT 3
+OUT jp 60929
+RESOLVINGc 3 ::: jp RSHIFT 3
+RESOLVINGc js ::: jr OR js
+                           RES: js <= jp RSHIFT 5  FROM: jr OR js
+                             PARTS key js jp RSHIFT 5
+OPERATING ON jp RSHIFT 5
+RESOLVINGb jp
+                             RES: jp <= jn OR jo  FROM: jp RSHIFT 5
+OUT jp 60929
+RESOLVINGc 5 ::: jp RSHIFT 5
+RESOLVINGc jv ::: jt AND jv
+                         RES: jv <= NOT ju  FROM: jt AND jv
+                           PARTS key jv NOT ju
+RESOLVINGa ju
+                           RES: ju <= jr AND js  FROM: NOT ju
+                             PARTS key ju jr AND js
+OPERATING ON jr AND js
+RESOLVINGb jr
+                             RES: jr <= jp RSHIFT 3  FROM: jr AND js
+OUT jr 7616
+RESOLVINGc js ::: jr AND js
+                             RES: js <= jp RSHIFT 5  FROM: jr AND js
+OUT js 1904
+RESOLVINGc jz ::: jx AND jz
+                     RES: jz <= NOT jy  FROM: jx AND jz
+                       PARTS key jz NOT jy
+RESOLVINGa jy
+                       RES: jy <= jq AND jw  FROM: NOT jy
+                         PARTS key jy jq AND jw
+OPERATING ON jq AND jw
+RESOLVINGb jq
+                         RES: jq <= jp RSHIFT 2  FROM: jq AND jw
+OUT jq 15232
+RESOLVINGc jw ::: jq AND jw
+                         RES: jw <= jt AND jv  FROM: jq AND jw
+OUT jw 6832
+RESOLVINGc kd ::: kb AND kd
+                 RES: kd <= NOT kc  FROM: kb AND kd
+                   PARTS key kd NOT kc
+RESOLVINGa kc
+                   RES: kc <= jp AND ka  FROM: NOT kc
+                     PARTS key kc jp AND ka
+OPERATING ON jp AND ka
+RESOLVINGb jp
+                     RES: jp <= jn OR jo  FROM: jp AND ka
+OUT jp 60929
+RESOLVINGc ka ::: jp AND ka
+                     RES: ka <= jx AND jz  FROM: jp AND ka
+OUT ka 8496
+RESOLVINGc 1 ::: kh LSHIFT 1
+RESOLVINGc la ::: lb OR la
+         RES: la <= 1 AND kz  FROM: lb OR la
+           PARTS key la 1 AND kz
+OPERATING ON 1 AND kz
+RESOLVINGb 1
+RESOLVINGc kz ::: 1 AND kz
+           RES: kz <= kw AND ky  FROM: 1 AND kz
+             PARTS key kz kw AND ky
+OPERATING ON kw AND ky
+RESOLVINGb kw
+             RES: kw <= kk OR kv  FROM: kw AND ky
+               PARTS key kw kk OR kv
+OPERATING ON kk OR kv
+RESOLVINGb kk
+               RES: kk <= ki OR kj  FROM: kk OR kv
+                 PARTS key kk ki OR kj
+OPERATING ON ki OR kj
+RESOLVINGb ki
+                 RES: ki <= jp RSHIFT 1  FROM: ki OR kj
+                   PARTS key ki jp RSHIFT 1
+OPERATING ON jp RSHIFT 1
+RESOLVINGb jp
+                   RES: jp <= jn OR jo  FROM: jp RSHIFT 1
+OUT jp 60929
+RESOLVINGc 1 ::: jp RSHIFT 1
+RESOLVINGc kj ::: ki OR kj
+                 RES: kj <= kf LSHIFT 15  FROM: ki OR kj
+                   PARTS key kj kf LSHIFT 15
+OPERATING ON kf LSHIFT 15
+RESOLVINGb kf
+                   RES: kf <= 1 AND ke  FROM: kf LSHIFT 15
+OUT kf 1
+RESOLVINGc 15 ::: kf LSHIFT 15
+RESOLVINGc kv ::: kk OR kv
+               RES: kv <= ks AND ku  FROM: kk OR kv
+                 PARTS key kv ks AND ku
+OPERATING ON ks AND ku
+RESOLVINGb ks
+                 RES: ks <= kl OR kr  FROM: ks AND ku
+                   PARTS key ks kl OR kr
+OPERATING ON kl OR kr
+RESOLVINGb kl
+                   RES: kl <= kk RSHIFT 2  FROM: kl OR kr
+                     PARTS key kl kk RSHIFT 2
+OPERATING ON kk RSHIFT 2
+RESOLVINGb kk
+                     RES: kk <= ki OR kj  FROM: kk RSHIFT 2
+OUT kk 63232
+RESOLVINGc 2 ::: kk RSHIFT 2
+RESOLVINGc kr ::: kl OR kr
+                   RES: kr <= ko AND kq  FROM: kl OR kr
+                     PARTS key kr ko AND kq
+OPERATING ON ko AND kq
+RESOLVINGb ko
+                     RES: ko <= km OR kn  FROM: ko AND kq
+                       PARTS key ko km OR kn
+OPERATING ON km OR kn
+RESOLVINGb km
+                       RES: km <= kk RSHIFT 3  FROM: km OR kn
+                         PARTS key km kk RSHIFT 3
+OPERATING ON kk RSHIFT 3
+RESOLVINGb kk
+                         RES: kk <= ki OR kj  FROM: kk RSHIFT 3
+OUT kk 63232
+RESOLVINGc 3 ::: kk RSHIFT 3
+RESOLVINGc kn ::: km OR kn
+                       RES: kn <= kk RSHIFT 5  FROM: km OR kn
+                         PARTS key kn kk RSHIFT 5
+OPERATING ON kk RSHIFT 5
+RESOLVINGb kk
+                         RES: kk <= ki OR kj  FROM: kk RSHIFT 5
+OUT kk 63232
+RESOLVINGc 5 ::: kk RSHIFT 5
+RESOLVINGc kq ::: ko AND kq
+                     RES: kq <= NOT kp  FROM: ko AND kq
+                       PARTS key kq NOT kp
+RESOLVINGa kp
+                       RES: kp <= km AND kn  FROM: NOT kp
+                         PARTS key kp km AND kn
+OPERATING ON km AND kn
+RESOLVINGb km
+                         RES: km <= kk RSHIFT 3  FROM: km AND kn
+OUT km 7904
+RESOLVINGc kn ::: km AND kn
+                         RES: kn <= kk RSHIFT 5  FROM: km AND kn
+OUT kn 1976
+RESOLVINGc ku ::: ks AND ku
+                 RES: ku <= NOT kt  FROM: ks AND ku
+                   PARTS key ku NOT kt
+RESOLVINGa kt
+                   RES: kt <= kl AND kr  FROM: NOT kt
+                     PARTS key kt kl AND kr
+OPERATING ON kl AND kr
+RESOLVINGb kl
+                     RES: kl <= kk RSHIFT 2  FROM: kl AND kr
+OUT kl 15808
+RESOLVINGc kr ::: kl AND kr
+                     RES: kr <= ko AND kq  FROM: kl AND kr
+OUT kr 6488
+RESOLVINGc ky ::: kw AND ky
+             RES: ky <= NOT kx  FROM: kw AND ky
+               PARTS key ky NOT kx
+RESOLVINGa kx
+               RES: kx <= kk AND kv  FROM: NOT kx
+                 PARTS key kx kk AND kv
+OPERATING ON kk AND kv
+RESOLVINGb kk
+                 RES: kk <= ki OR kj  FROM: kk AND kv
+OUT kk 63232
+RESOLVINGc kv ::: kk AND kv
+                 RES: kv <= ks AND ku  FROM: kk AND kv
+OUT kv 9368
+RESOLVINGc 1 ::: lc LSHIFT 1
+RESOLVINGc lv ::: lw OR lv
+     RES: lv <= 1 AND lu  FROM: lw OR lv
+       PARTS key lv 1 AND lu
+OPERATING ON 1 AND lu
+RESOLVINGb 1
+RESOLVINGc lu ::: 1 AND lu
+       RES: lu <= lr AND lt  FROM: 1 AND lu
+         PARTS key lu lr AND lt
+OPERATING ON lr AND lt
+RESOLVINGb lr
+         RES: lr <= lf OR lq  FROM: lr AND lt
+           PARTS key lr lf OR lq
+OPERATING ON lf OR lq
+RESOLVINGb lf
+           RES: lf <= ld OR le  FROM: lf OR lq
+             PARTS key lf ld OR le
+OPERATING ON ld OR le
+RESOLVINGb ld
+             RES: ld <= kk RSHIFT 1  FROM: ld OR le
+               PARTS key ld kk RSHIFT 1
+OPERATING ON kk RSHIFT 1
+RESOLVINGb kk
+               RES: kk <= ki OR kj  FROM: kk RSHIFT 1
+OUT kk 63232
+RESOLVINGc 1 ::: kk RSHIFT 1
+RESOLVINGc le ::: ld OR le
+             RES: le <= la LSHIFT 15  FROM: ld OR le
+               PARTS key le la LSHIFT 15
+OPERATING ON la LSHIFT 15
+RESOLVINGb la
+               RES: la <= 1 AND kz  FROM: la LSHIFT 15
+OUT la 0
+RESOLVINGc 15 ::: la LSHIFT 15
+RESOLVINGc lq ::: lf OR lq
+           RES: lq <= ln AND lp  FROM: lf OR lq
+             PARTS key lq ln AND lp
+OPERATING ON ln AND lp
+RESOLVINGb ln
+             RES: ln <= lg OR lm  FROM: ln AND lp
+               PARTS key ln lg OR lm
+OPERATING ON lg OR lm
+RESOLVINGb lg
+               RES: lg <= lf RSHIFT 2  FROM: lg OR lm
+                 PARTS key lg lf RSHIFT 2
+OPERATING ON lf RSHIFT 2
+RESOLVINGb lf
+                 RES: lf <= ld OR le  FROM: lf RSHIFT 2
+OUT lf 31616
+RESOLVINGc 2 ::: lf RSHIFT 2
+RESOLVINGc lm ::: lg OR lm
+               RES: lm <= lj AND ll  FROM: lg OR lm
+                 PARTS key lm lj AND ll
+OPERATING ON lj AND ll
+RESOLVINGb lj
+                 RES: lj <= lh OR li  FROM: lj AND ll
+                   PARTS key lj lh OR li
+OPERATING ON lh OR li
+RESOLVINGb lh
+                   RES: lh <= lf RSHIFT 3  FROM: lh OR li
+                     PARTS key lh lf RSHIFT 3
+OPERATING ON lf RSHIFT 3
+RESOLVINGb lf
+                     RES: lf <= ld OR le  FROM: lf RSHIFT 3
+OUT lf 31616
+RESOLVINGc 3 ::: lf RSHIFT 3
+RESOLVINGc li ::: lh OR li
+                   RES: li <= lf RSHIFT 5  FROM: lh OR li
+                     PARTS key li lf RSHIFT 5
+OPERATING ON lf RSHIFT 5
+RESOLVINGb lf
+                     RES: lf <= ld OR le  FROM: lf RSHIFT 5
+OUT lf 31616
+RESOLVINGc 5 ::: lf RSHIFT 5
+RESOLVINGc ll ::: lj AND ll
+                 RES: ll <= NOT lk  FROM: lj AND ll
+                   PARTS key ll NOT lk
+RESOLVINGa lk
+                   RES: lk <= lh AND li  FROM: NOT lk
+                     PARTS key lk lh AND li
+OPERATING ON lh AND li
+RESOLVINGb lh
+                     RES: lh <= lf RSHIFT 3  FROM: lh AND li
+OUT lh 3952
+RESOLVINGc li ::: lh AND li
+                     RES: li <= lf RSHIFT 5  FROM: lh AND li
+OUT li 988
+RESOLVINGc lp ::: ln AND lp
+             RES: lp <= NOT lo  FROM: ln AND lp
+               PARTS key lp NOT lo
+RESOLVINGa lo
+               RES: lo <= lg AND lm  FROM: NOT lo
+                 PARTS key lo lg AND lm
+OPERATING ON lg AND lm
+RESOLVINGb lg
+                 RES: lg <= lf RSHIFT 2  FROM: lg AND lm
+OUT lg 7904
+RESOLVINGc lm ::: lg AND lm
+                 RES: lm <= lj AND ll  FROM: lg AND lm
+OUT lm 3244
+RESOLVINGc lt ::: lr AND lt
+         RES: lt <= NOT ls  FROM: lr AND lt
+           PARTS key lt NOT ls
+RESOLVINGa ls
+           RES: ls <= lf AND lq  FROM: NOT ls
+             PARTS key ls lf AND lq
+OPERATING ON lf AND lq
+RESOLVINGb lf
+             RES: lf <= ld OR le  FROM: lf AND lq
+OUT lf 31616
+RESOLVINGc lq ::: lf AND lq
+             RES: lq <= ln AND lp  FROM: lf AND lq
+OUT lq 4684
+RESOLVINGc undefined ::: lx
+   RES: undefined <= undefined  FROM: lx
+     PARTS key undefined undefined
