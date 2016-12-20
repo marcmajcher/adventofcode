@@ -3,14 +3,9 @@
 const size = 1000;
 const grid = [];
 for (let i = 0; i < size; i++) {
-  grid.push(Array(size).fill(false));
+  grid.push(Array(size).fill(0));
 }
 
-// const input = [
-//   'turn on 0,0 through 9,9',
-//   'toggle 0,0 through 9,0',
-//   'turn off 4,4 through 5,5'
-// ];
 const input = require('./data06');
 
 input.forEach(inst => {
@@ -25,21 +20,22 @@ input.forEach(inst => {
   for (let col = start[0]; col <= end[0]; col++) {
     for (let row = start[1]; row <= end[1]; row++) {
       if (turn === 'toggle') {
-        grid[row][col] = !grid[row][col];
+        grid[row][col] = grid[row][col]+2;
       }
       else {
-        grid[row][col] = turn === 'on' ? true : false;
+        grid[row][col] = turn === 'on' ? grid[row][col]+1 : Math.max(grid[row][col]-1,0);
       }
-
     }
   }
 });
 
 // grid.forEach(row => {
-//   console.log(row.map(on => on ? '*' : '.').join(''));
+//   console.log(row.join(''));
 // })
-let lights = '';
-grid.forEach(row=> {
-  lights += row.map(on => on ? '*' : '.').join('');
-})
-console.log('Lit:',lights.match(/\*/g).length);
+let brightness = grid.reduce((acc, cur) => {
+  acc += cur.reduce((a, c) => {
+    return a + c;
+  }, 0);
+  return acc;
+}, 0);
+console.log('Brightness:', brightness);
