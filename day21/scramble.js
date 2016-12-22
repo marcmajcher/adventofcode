@@ -1,9 +1,9 @@
 'use strict';
 
 const input = require('./data');
-const password = 'abcdefgh';
+const password = 'fbgdceah';
 
-// const password = 'abcde'; // => decab
+// const password = 'decab'; // => abcde
 // const input = [
 //   'swap position 4 with position 0', // swaps the first and last letters, producing the input for the next step, ebcda.
 //   'swap letter d with letter b', // swaps the positions of d and b: edcba.
@@ -16,22 +16,22 @@ const password = 'abcdefgh';
 // ];
 
 const instructions = {
-  swap: (pass, args) => {
+  swap: (pass, args) => { // reversible
     const what = args.shift();
     if (what === 'position') {
       // swap position X with position Y means that the letters at indexes X and Y (counting from 0) should be swapped.
       const [x, _w, _p, y] = args;
-      // console.log(`SWAP positions ${x} <=> ${y}`);
-      // console.log('  IN:', pass.join(''));
+      console.log(`SWAP positions ${x} <=> ${y}`);
+      console.log('  IN:', pass.join(''));
       [pass[x], pass[y]] = [pass[y], pass[x]];
-      // console.log(' OUT:', pass.join(''));
-return pass;
+      console.log(' OUT:', pass.join(''));
+      return pass;
     }
     else if (what === 'letter') {
       // swap letter X with letter Y means that the letters X and Y should be swapped (regardless of where they appear in the string).
       const [x, _w, _l, y] = args;
-      // console.log(`SWAP letters ${x} <=> ${y}`);
-      // console.log('  IN:', pass.join(''));
+      console.log(`SWAP letters ${x} <=> ${y}`);
+      console.log('  IN:', pass.join(''));
       const re = new RegExp(`[${x}${y}]`, 'g');
       pass = pass.join('').replace(re, (m) => {
         return {
@@ -39,65 +39,93 @@ return pass;
           [y]: x
         }[m]
       }).split('');
-      // console.log(' OUT:', pass.join(''));
+      console.log(' OUT:', pass.join(''));
       return pass;
     }
   },
-  rotate: (pass, args) => {
-    const what = args.shift();
+  rotate: (pass, args, undo) => {
+    let what = args.shift();
+    if (undo) {
+      if (what === 'right') {
+        what = 'left';
+      }
+      else if (what === 'left') {
+        what = 'right';
+      }
+    }
     let steps = 0;
     if (what === 'left' || what === 'right') {
       // rotate left/right X steps means that the whole string should be rotated; for example, one right rotation would turn abcd into dabc.
       steps = args[0];
-      // console.log(`ROTATE ${what} ${steps} steps`);
+      console.log(`ROTATE ${what} ${steps} steps`);
     }
     else if (what === 'based') {
       // rotate based on position of letter X means that the whole string should be rotated to the right based on the index of letter X
       //(counting from 0) as determined before this instruction does any rotations. Once the index is determined,
       // rotate the string to the right one time, plus a number of times equal to that index, plus one additional time if the index was at least 4.
-      steps = pass.indexOf(args[4]);
-      steps += steps >= 4 ? 2 : 1;
-      // console.log(`ROTATE based on letter ${args[4]} (${steps} steps)`);
+      if (undo) {
+        steps = pass.length * 2;
+      }
+      else {
+        steps = pass.indexOf(args[4]);
+        steps += steps >= 4 ? 2 : 1;
+      }
+      console.log(`ROTATE based on letter ${args[4]} (${steps} steps)`);
     }
 
-    // console.log('  IN:', pass.join(''));
+    console.log('  IN:', pass.join(''));
+
     for (let i = 0; i < steps; i++) {
-      if (what === 'left') {
+      if (what === 'based' && undo) {
+        let pos = pass.indexOf(args[4]);
+        let rsteps = (pos + (pos >= 4 ? 2 : 1))%pass.length;
+        if (i === rsteps) {
+          console.log(' OUT:', pass.join(''));
+          return pass;
+        }
+        pass.push(pass.shift());
+      }
+      else if (what === 'left') {
         pass.push(pass.shift());
       }
       else {
         pass.unshift(pass.pop());
       }
     }
-    // console.log(' OUT:', pass.join(''));
+    console.log(' OUT:', pass.join(''));
     return pass;
   },
-  reverse: (pass, args) => {
+  reverse: (pass, args) => { // reversible
     // reverse positions X through Y means that the span of letters at indexes X through Y (including the letters at X and Y) should be reversed in order.
     const [_p, from, _t, to] = args.map(n => parseInt(n));
-    // console.log(`REVERSE ${from} - ${to}`);
-    // console.log('  IN:', pass.join(''));
+    console.log(`REVERSE ${from} - ${to}`);
+    console.log('  IN:', pass.join(''));
     pass = pass.slice(0, from)
       .concat(pass.slice(from, to + 1).reverse())
       .concat(pass.slice(to + 1));
-    // console.log(' OUT:', pass.join(''));
+    console.log(' OUT:', pass.join(''));
     return pass;
   },
-  move: (pass, args) => {
+  move: (pass, args, undo) => {
     // move position X to position Y means that the letter which is at index X should be removed from the string, then inserted such that it ends up at index Y.
     const [_p, from, _t, _ppm, to] = args;
-    // console.log(`MOVE ${from} => ${to}`);
-    // console.log('  IN:', pass.join(''));
+    console.log(`MOVE ${from} => ${to}`);
+    console.log('  IN:', pass.join(''));
+    if (undo) {
+      pass.splice(from, 0, pass.splice(to, 1)[0]);
+      console.log(' OUT:', pass.join(''));
+      return pass;
+    }
     pass.splice(to, 0, pass.splice(from, 1)[0]);
-    // console.log(' OUT:', pass.join(''));
+    console.log(' OUT:', pass.join(''));
     return pass;
   },
 };
 
 let pass = password.split('');
-input.forEach(inst => {
+input.reverse().forEach(inst => {
   const parts = inst.split(' ');
   const instruction = parts.shift();
-  pass = instructions[instruction](pass, parts);
+  pass = instructions[instruction](pass, parts, true);
 });
 console.log('PASSWORD:', pass.join(''));
