@@ -2,7 +2,7 @@
 
 const pq = require('js-priority-queue');
 
-const input = require('./data.js');
+const input = require('./data.js'); // <712
 // const input = `
 // ###########
 // #0.1.....2#
@@ -116,31 +116,51 @@ console.log(distances);
 // STEP 2: find shortest route that hits all the points
 
 function findShortestRoute(routes) {
-  return getRoute(routes, 0, {}, 0, Number.MAX_SAFE_INTEGER);
+  return getRoute(routes, 0, new Set(), 0, {
+    min: Number.MAX_SAFE_INTEGER
+  }, []);
 }
 
-function getRoute(routes, start, seen, distanceSoFar, minSoFar) {
-  seen[start] = true;
-  const toVisit = [];
-  for (let i = 0; i < routes.length; i++) {
-    if (!seen[i]) {
+let goHome = false;
+
+function getRoute(routes, start, seen, distanceSoFar, minSoFar, pathSoFar) {
+  pathSoFar.push(start);
+  seen.add(start);
+
+  let toVisit = [];
+  for (var i = 0; i < routes.length; i++) {
+    if (!seen.has(i)) {
       toVisit.push(i);
     }
   }
-  // console.log(start, toVisit, distanceSoFar);
+  toVisit = toVisit.reverse();
+
+  // console.log(start, toVisit, distanceSoFar, `(${minSoFar.min})`, pathSoFar);
+
   if (toVisit.length > 0) {
     for (let i = 0; i < toVisit.length; i++) {
-      distanceSoFar += routes[start][toVisit[i]];
-
-      if (distanceSoFar > minSoFar) {
-        return Number.MAX_SAFE_INTEGER;
+      const next = toVisit[i];
+      const newDistance = distanceSoFar + routes[start][next];
+      if (newDistance > minSoFar.min) {
+        // console.log(toVisit[i], 'NO GOOD');
+        return minSoFar.min;
       }
-      return getRoute(routes, toVisit[i], seen, distanceSoFar, minSoFar);
-    }
+      // console.log('getting route for', i);
+      const routeDistance = getRoute(routes, toVisit[i], new Set(seen), newDistance, minSoFar, pathSoFar.slice(0));
+      // return Math.min(routeDistance, minSoFar.min);
+    };
   }
   else {
-    return distanceSoFar;
+    // console.log('FULL ROUTE LENGTH:', distanceSoFar, start);
+    const newDist = distanceSoFar + routes[start][0];
+    if (newDist < minSoFar.min) {
+      minSoFar.min = newDist;
+    }
+    return minSoFar.min;
   }
+
+  return minSoFar.min;
+
 }
 
 console.log(findShortestRoute(distances));
