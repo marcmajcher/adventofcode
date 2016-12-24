@@ -163,7 +163,7 @@ function getPath(start, dest) {
     });
   }
 
-console.log(Object.keys(costSoFar).filter(k => costSoFar[k]<=50).length );
+  console.log(Object.keys(costSoFar).filter(k => costSoFar[k] <= 50).length);
   /////
   if (cameFrom[getKey(dest)]) {
     const pathList = [];
