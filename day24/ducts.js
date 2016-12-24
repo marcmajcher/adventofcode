@@ -9,6 +9,7 @@ const input = require('./data.js');
 // ###########
 // `; // 14 steps
 
+// Simple brute-force BFS takes forever - try another approach in ducts2.js
 
 const wall = '#';
 const ducts = input.split('\n').filter(e => e !== '');

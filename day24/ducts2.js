@@ -11,8 +11,6 @@ const input = require('./data.js');
 // ###########
 // `; // 14 steps
 
-// strategy two: get all the checkpoints, get the distances between each pair of checkpoints, do TSP
-
 const wall = '#';
 const ducts = input.split('\n').filter(e => e !== '');
 // const numberOfCheckpoints = input.match(/\d/g).length;
@@ -118,19 +116,18 @@ console.log(distances);
 // STEP 2: find shortest route that hits all the points
 
 function findShortestRoute(routes) {
-  let minDistance = Number.MAX_SAFE_INTEGER;
-
-  routes.forEach(start => {
-    const distance = getRoute(routes, start, {}, 0, minDistance);
-    minDistance = Math.min(distance, minDistance);
-  });
-
-  return minDistance;
+  return getRoute(routes, 0, {}, 0, Number.MAX_SAFE_INTEGER);
 }
 
 function getRoute(routes, start, seen, distanceSoFar, minSoFar) {
   seen[start] = true;
-  const toVisit = routes[start].filter(key => !seen[key]);
+  const toVisit = [];
+  for (let i = 0; i < routes.length; i++) {
+    if (!seen[i]) {
+      toVisit.push(i);
+    }
+  }
+  // console.log(start, toVisit, distanceSoFar);
   if (toVisit.length > 0) {
     for (let i = 0; i < toVisit.length; i++) {
       distanceSoFar += routes[start][toVisit[i]];
@@ -140,59 +137,10 @@ function getRoute(routes, start, seen, distanceSoFar, minSoFar) {
       }
       return getRoute(routes, toVisit[i], seen, distanceSoFar, minSoFar);
     }
-
   }
   else {
     return distanceSoFar;
   }
-
 }
 
 console.log(findShortestRoute(distances));
-
-// const visited = {};
-// const start = {
-//   x: 1,
-//   y: 1,
-//   steps: 0,
-//   numbers: ''
-// };
-// const toVisit = [start];
-//
-// function toKey(loc) {
-//   return [loc.numbers, loc.x, loc.y].join(':');
-// }
-//
-
-// while (toVisit.length > 0) {
-//   const location = toVisit.pop();
-//   // console.log(location);
-//
-//   if (getContents(location).match(/\d/)) {
-//     const numbersSeen = new Set(location.numbers.split(''));
-//     numbersSeen.add(getContents(location));
-//     location.numbers = [...numbersSeen].sort((a, b) => a - b).join('');
-//   }
-//
-//   if (location.numbers.length === numberOfCheckpoints) {
-//     console.log('WOOOOOO');
-//     console.log(location);
-//     break;
-//   }
-//
-//   const key = toKey(location);
-//   if (visited[key] === undefined || visited[key].steps > location.steps) {
-//     visited[key] = location;
-//   }
-//
-//   getNeighbors(location).forEach(loc => {
-//     if (loc.steps === undefined) {
-//       loc.steps = location.steps + 1;
-//     }
-//     if (loc.numbers === undefined) {
-//       loc.numbers = location.numbers;
-//     }
-//     toVisit.unshift(loc);
-//   })
-//
-// }
