@@ -2,20 +2,16 @@
 
 const input = require('./data.js');
 
-let pc = 0;
-let reg = {
-  a: 0,
-  b: 0,
-  c: 1,
-  d: 0
-}
-
-let output = '';
+let reg;
+let pc;
+let output;
 
 const cpu = {
   out: (x) => {
     output += isNaN(parseInt(x)) ? reg[x] : x;
-    console.log(output);
+    if ((output.length > 2 && !output.match(/^(01)+0?$/)) || output.length >= 100) {
+      stopAndCheck = true;
+    }
     return ++pc;
   },
   cpy: (v, r) => {
@@ -61,15 +57,30 @@ const cpu = {
   }
 };
 
-while (pc < input.length) {
-  // console.log(pc + '  ', input[pc]);
-  let [inst, ...args] = input[pc].split(' ');
-  // console.log(`pc ${pc}: ${input[pc]} => ${JSON.stringify(reg)}`);
-  pc = cpu[inst](...args);
 
-}
-logreg();
+let count = 0;
+let done = false;
+let stopAndCheck = false;
 
-function logreg() {
-  console.log(`pc: ${pc} => ${JSON.stringify(reg)}\n`);
+while (!done) {
+  output = '';
+  pc = 0;
+  reg = {
+    a: count,
+    b: 0,
+    c: 0,
+    d: 0
+  }
+
+  while (pc < input.length && !stopAndCheck) {
+    let [inst, ...args] = input[pc].split(' ');
+    pc = cpu[inst](...args);
+  }
+
+  if (output.match(/^(01)+0?$/)) {
+    done = true;
+    console.log(count);
+  }
+  stopAndCheck = false;
+  count++;
 }
