@@ -13,7 +13,7 @@ function printIfReal(data) {
   let sum = Object.keys(letters).sort()
     .sort((a, b) => {
       if (letters[a] === letters[b]) {
-        return (a<b?-1:a>b);
+        return (a < b ? -1 : a > b);
       }
       return letters[b] - letters[a]
     })
@@ -25,10 +25,12 @@ function printIfReal(data) {
 }
 
 function decrypt(name, id) {
-  id = id%26;
+  id = id % 26;
   return name.split('').map((e) => {
-    if (e === '-') { return ' '}
-    return String.fromCharCode(( ( e.charCodeAt(0) - 97) + id)%26 + 97);
+    if (e === '-') {
+      return ' '
+    }
+    return String.fromCharCode(((e.charCodeAt(0) - 97) + id) % 26 + 97);
   }).join('');
 }
 
