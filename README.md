@@ -1,3 +1,3 @@
 # adventofcode
 
-http://adventofcode.com/2016/
+http://adventofcode.com/
