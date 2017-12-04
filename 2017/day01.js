@@ -4,7 +4,7 @@ const input = '65928224889313385898155254252368182852295556163929284332624368473
 
 let total = 0;
 for (let i = 0; i < input.length; i++) {
-  if (input[i] === input[(i + 1) % input.length]) {
+  if (input[i] === input[(i + input.length / 2) % input.length]) {
     total += parseInt(input[i], 10);
   }
 }
