@@ -17,11 +17,22 @@ const input = `493	458	321	120	49	432	433	92	54	452	41	461	388	409	263	58
 1165	1119	194	280	223	1181	267	898	1108	124	618	1135	817	997	129	227
 404	1757	358	2293	2626	87	613	95	1658	147	75	930	2394	2349	86	385`;
 
+
 let checksum = 0;
 
+function getdiv(row) {
+  for (let i = 0; i < row.length - 1; i++) {
+    for (let j = i + 1; j < row.length; j++) {
+      const result = Math.max(row[i], row[j]) / Math.min(row[i], row[j]);
+      if (Number.isInteger(result)) {
+        return result;
+      }
+    }
+  }
+}
+
 for (let row of input.split('\n')) {
-  const cells = row.split(/\s+/);
-  checksum += Math.max(...cells) - Math.min(...cells);
+  checksum += getdiv(row.split(/\s+/));
 }
 
 console.log(checksum);

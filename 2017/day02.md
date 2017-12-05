@@ -28,3 +28,15 @@ Input:
 631	481	185	135	665	641	492	408	164	132	478	188	444	378	633	516
 1165	1119	194	280	223	1181	267	898	1108	124	618	1135	817	997	129	227
 404	1757	358	2293	2626	87	613	95	1658	147	75	930	2394	2349	86	385
+
+It sounds like the goal is to find the only two numbers in each row where one evenly divides the other - that is, where the result of the division operation is a whole number. They would like you to find those numbers on each line, divide them, and add up each line's result.
+
+For example, given the following spreadsheet:
+
+5 9 2 8
+9 4 7 3
+3 8 6 5
+In the first row, the only two numbers that evenly divide are 8 and 2; the result of this division is 4.
+In the second row, the two numbers are 9 and 3; the result is 3.
+In the third row, the result is 2.
+In this example, the sum of the results would be 4 + 3 + 2 = 9.
