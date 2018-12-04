@@ -2,26 +2,26 @@
 
 /* eslint-env node */
 
-// const input = require('./day4_input');
-const input = [
-  '[1518-11-05 00:55] wakes up',
-  '[1518-11-01 00:05] falls asleep',
-  '[1518-11-03 00:24] falls asleep',
-  '[1518-11-01 00:55] wakes up',
-  '[1518-11-01 00:30] falls asleep',
-  '[1518-11-01 00:25] wakes up',
-  '[1518-11-01 23:58] Guard #99 begins shift',
-  '[1518-11-02 00:40] falls asleep',
-  '[1518-11-05 00:45] falls asleep',
-  '[1518-11-02 00:50] wakes up',
-  '[1518-11-03 00:29] wakes up',
-  '[1518-11-04 00:02] Guard #99 begins shift',
-  '[1518-11-04 00:36] falls asleep',
-  '[1518-11-01 00:00] Guard #10 begins shift',
-  '[1518-11-05 00:03] Guard #99 begins shift',
-  '[1518-11-04 00:46] wakes up',
-  '[1518-11-03 00:05] Guard #10 begins shift',
-];
+const input = require('./day4_input');
+// const input = [
+//   '[1518-11-05 00:55] wakes up',
+//   '[1518-11-01 00:05] falls asleep',
+//   '[1518-11-03 00:24] falls asleep',
+//   '[1518-11-01 00:55] wakes up',
+//   '[1518-11-01 00:30] falls asleep',
+//   '[1518-11-01 00:25] wakes up',
+//   '[1518-11-01 23:58] Guard #99 begins shift',
+//   '[1518-11-02 00:40] falls asleep',
+//   '[1518-11-05 00:45] falls asleep',
+//   '[1518-11-02 00:50] wakes up',
+//   '[1518-11-03 00:29] wakes up',
+//   '[1518-11-04 00:02] Guard #99 begins shift',
+//   '[1518-11-04 00:36] falls asleep',
+//   '[1518-11-01 00:00] Guard #10 begins shift',
+//   '[1518-11-05 00:03] Guard #99 begins shift',
+//   '[1518-11-04 00:46] wakes up',
+//   '[1518-11-03 00:05] Guard #10 begins shift',
+// ];
 
 const shifts = input.map((e) => {
   const [, month, day, hour, min, text] = e.match(/^\[1518-(\d\d)-(\d\d) (\d\d):(\d\d)\] (.*)$/);
@@ -86,4 +86,10 @@ for (let i = 0; i < shifts.length; i++) {
 
 const sleepyId = Object.entries(sleep).sort((a, b) => b[1] - a[1])[0][0];
 const sleepyTime = minutes[sleepyId].reduce((a, c) => Math.max(a, c), 0);
-console.log(minutes[sleepyId].indexOf(sleepyTime) * parseInt(sleepyId, 10));
+// console.log(minutes[sleepyId].indexOf(sleepyTime) * parseInt(sleepyId, 10));
+console.log(Object.entries(minutes).map(e => [e[0], e[1].join('')]));
+
+const entry = Object.entries(minutes).reduce((a, c) => (Math.max(...c[1]) > a.max ? { id: c[0], max: Math.max(...c[1]) }
+                                                                    : a), { id: null, max: 0 });
+const minute = minutes[entry.id].indexOf(entry.max);
+console.log(minute * parseInt(entry.id, 10));
