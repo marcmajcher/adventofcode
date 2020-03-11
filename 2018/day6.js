@@ -2,15 +2,15 @@
 
 /* eslint-env node */
 
-// const input = require('./day6_input');
-const input = [
-  [1, 1],
-  [1, 6],
-  [8, 3],
-  [3, 4],
-  [5, 5],
-  [8, 9],
-];
+const input = require('./day6_input');
+// const input = [
+//   [1, 1],
+//   [1, 6],
+//   [8, 3],
+//   [3, 4],
+//   [5, 5],
+//   [8, 9],
+// ];
 const points = input.map(e => ({ x: e[0], y: e[1] }));
 const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -22,7 +22,7 @@ const nwse = points.reduce((a, c) => {
   return { nw, se };
 }, { nw: points[0], se: points[0] });
 
-console.log(nwse);
+// console.log(nwse);
 
 // traverse grid from nw->se, for each point, find closest coordinate, increment count
 // for that coordinate. if grid point is on edge, disqualify coordinate (infinite)
@@ -36,23 +36,36 @@ function findClosest(coords, point) {
   const min = Math.min.apply(null, distances);
   if (distances.filter(e => e === min).length === 1) {
     const i = distances.indexOf(min);
-    // return i;
-    if (coords[i].x === point.x && coords[i].y === point.y) {
-      return LETTERS[i];
-    }
-    return letters[i];
+    return i;
+    // if (coords[i].x === point.x && coords[i].y === point.y) {
+    //   return LETTERS[i];
+    // }
+    // return letters[i];
   }
   return '.';
 }
 
 const counts = new Array(points.length).fill(0);
-const invalid = [];
+const invalid = {};
 
 for (let y = nwse.nw.y; y <= nwse.se.y; y++) {
   let grid = '';
   for (let x = nwse.nw.x; x <= nwse.se.x; x++) {
-
-    grid += findClosest(points, { x, y });
+    const closest = findClosest(points, { x, y });
+    grid += closest;
+    if (closest !== '.') {
+      counts[closest]++;
+      if (y === nwse.nw.y || y === nwse.se.y || x === nwse.nw.x || x === nwse.se.x) {
+        invalid[closest] = true;
+      }
+    }
   }
-  console.log(grid);
+  // console.log(grid);
 }
+
+console.log(counts.reduce((a, c, i) => {
+  if (invalid[i]) {
+    return a;
+  }
+  return (a.c > c ? a : { i, c });
+}, { i: -1, c: 0 }).c);
